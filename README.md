@@ -2,7 +2,14 @@
 
 Project that use MVC pattern to Javascript
 
+assets: contém arquivos estáticos, como arquivos CSS e JavaScript.
+components: contém componentes React reutilizáveis.
+controllers: contém controladores que lidam com a lógica de negócios da aplicação.
+models: contém modelos que definem a estrutura dos dados usados na aplicação.
+views: contém visualizações que exibem os dados na tela.
+
 Libs used node with express, react, chart.js
+
 
 ____________________________________________________________________________________________________________________________
 # Getting Started with Create React App
