@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Chart from "../assets/components/Chart";
+import Chart from "../components/Chart";
 
 const ChartView = ({ labels, values }) => {
     useEffect(() => {
