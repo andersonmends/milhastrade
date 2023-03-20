@@ -3,27 +3,14 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, AreaChart, Area } from 'recharts';
 import { Card, Button } from 'react-bootstrap';
 import { FaChevronRight } from 'react-icons/fa';
-import {format} from "date-fns";
+import { format } from "date-fns";
+import { dataRecharts } from './assets/data';
+
 
 function App() {
 
-  function generateData() {
-    const data = [];
-
-    for (let i = 0; i < 30; i++) {
-      const date = new Date(2022, 0, i + 1);
-      const tudoazul = Math.floor(Math.random() * (500 - 100 + 1)) + 100;
-      const smiles = Math.floor(Math.random() * (300 - 50 + 1)) + 50;
-
-      data.push({ date, tudoazul, smiles });
-      // console.log(date);
-      
-    }
-
-    return data;
-  }
-
-  const data = generateData();
+  const data = dataRecharts;
+  console.log(data);
 
   const newsData = [
     { title: 'Título da Notícia 1', description: 'Descrição da Notícia 1' },
@@ -31,14 +18,6 @@ function App() {
     { title: 'Título da Notícia 3', description: 'Descrição da Notícia 3' },
   ];
 
-  const CustomizedAxisTick = ({ x, y, payload }) => {
-    const date = new Date(payload.value);
-    const formattedDate = `${date.getDate()}/${date.getMonth() + 1}`;
-
-    return (
-      <text x={x} y={y} dy={16} textAnchor="middle" fill="#666">{formattedDate}</text>
-    );
-  };
   return (
     <div>
       <Navbar bg="primary " expand="lg">
@@ -58,28 +37,26 @@ function App() {
         <h2 id="grafico">Gráfico de Cotação</h2>
         <Card>
           <Card.Body>
-            <AreaChart width={500} height={300} data={data}
+            <AreaChart width={600} height={300} data={data}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
               <defs>
                 <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
-                  <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
-                </linearGradient>
-                <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8} />
-                  <stop offset="95%" stopColor="#82ca9d" stopOpacity={0} />
+                  <stop offset="0%" stopColor="blue" stopOpacity={0.4} />
+                  <stop offset="90%" stopColor="blue" stopOpacity={0.1} />
                 </linearGradient>
               </defs>
               <XAxis
                 dataKey="date"
                 tickFormatter={(value) => format(new Date(value), "dd MMM")}
+                interval={15}
               />
               <YAxis />
               <CartesianGrid vertical="" />
-              <Tooltip />
+              <Tooltip
+                labelFormatter={(value) => format(new Date(value), "dd MMM yyyy")}
+              />
               <Legend />
-              <Area type="Function" dataKey="tudoazul" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
-              <Area type="Function" dataKey="smiles" stroke="#82ca9d" fillOpacity={1} fill="url(#colorPv)" />
+              <Area type="Function" dataKey="Tudoazul" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
             </AreaChart>
           </Card.Body>
         </Card>
