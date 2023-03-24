@@ -20,14 +20,14 @@ function App() {
 
   return (
     <div>
-      <Navbar bg="primary " expand="lg">
-        <Container>
-          <Navbar.Brand href="#home">Minha Página</Navbar.Brand>
+      <Navbar expand="lg" className='bg-primary.bg-gradient'>
+        <Container >
+          <Navbar.Brand className="text-white"  href="#home">Minha Página</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="#grafico">Gráfico de Cotação</Nav.Link>
-              <Nav.Link href="#noticias">Notícias</Nav.Link>
+            <Nav>
+              <Nav.Link href="#grafico" className="text-white">Gráfico de Cotação</Nav.Link>
+              <Nav.Link href="#noticias" className="text-white">Notícias</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -74,11 +74,38 @@ function App() {
 
       </Container>
 
-      <footer className="bg-light py-3">
-        <Container>
-          <p className="text-center">Todos os direitos reservados.</p>
-        </Container>
-      </footer>
+       
+        <Card.Footer className="bg-primary text-white mt-5" bg="primary" >
+          <div className="row py-3">
+            <div className="col-md-6 text-left">
+              Designed by{" "}
+              <a href="#" target="_blank">
+                Develop
+              </a>
+              &#169; {new Date().getFullYear()}
+            </div>
+            <div className="col-md-6 text-right">
+              <div>
+                <span>Follow Us: </span>
+                <a href="#" target="_blank">
+                  <i className="fab fa-facebook-f px-3" />
+                </a>
+                <a href="#" target="_blank">
+                  <i className="fab fa-twitter pr-3" />
+                </a>
+                <a href="#" target="_blank">
+                  <i className="fab fa-youtube pr-3" />
+                </a>
+                <a href="#" target="_blank">
+                  <i className="fab fa-github pr-3" />
+                </a>
+              </div>
+            </div>
+          </div>
+          </Card.Footer>
+          
+        
+      
     </div>
   );
 }
