@@ -1,20 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import tudoAzulLogo from "./assets/images/tudoazul-logo.webp"
 import smilesLogo from "./assets/images/smiles-logo.webp"
 import latampassLogo from "./assets/images/latampass-logo.webp"
 import { ListGroup, Row, Col, Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import { Card, Button, ButtonGroup } from 'react-bootstrap';
 import { FaChevronRight } from 'react-icons/fa';
-import { dataTudoazul } from './assets/data';
-import { dataSmiles } from './assets/data';
+import { hmData, maxData } from "./assets/data";
 import Chart from './components/Chart';
 import ButtonCia from './components/ButtonCia';
+import SkyscannerSearchWidget from './components/SkyscannerSearchWidget';
+import { Demo } from './components/Demo';
 
 function App() {
+  
 
-  const fanBlue = "#14649C"
-  const monaLisa = "#FCA292"
-  const clairvoyant = "#34054C"
+    const fanBlueAzul = "#14649C"
+  const monaLisaGol = "#FCA292"
+  const clairvoyantLatam = "#34054C"
+  const [daysHotmilhas, setDaysHotmilhas] = useState(7);
+  const [daysMaxmilhas, setDaysMaxmilhas] = useState(7);
+  const [nameCiaHotmilhas, setNameCiaHotmilhas] = useState("Gol");
+  const [colorCiaHotmilhas, setColorCiaHotmilhas] = useState(monaLisaGol);
+  const [nameCiaMaxmilhas, setNameCiaMaxmilhas] = useState("Latam");
+  const [colorCiaMaxmilhas, setColorCiaMaxmilhas] = useState(clairvoyantLatam);
 
   const newsData = [
     { title: 'Título da Notícia 1', description: 'Descrição da Notícia 1' },
@@ -22,9 +30,24 @@ function App() {
     { title: 'Título da Notícia 3', description: 'Descrição da Notícia 3' },
   ];
 
+  function handleHotmilhasClick(cia, color) {
+    console.log(cia);
+    setNameCiaHotmilhas(cia);
+    setColorCiaHotmilhas(color);
+    
+  }
+
+  function handleMaxmilhasClick(cia, color) {
+    console.log(cia);
+    setNameCiaMaxmilhas(cia);
+    setColorCiaMaxmilhas(color);
+
+  }
 
   return (
     <div>
+    
+      
       <Navbar bg='primary' variant='dark' expand="lg" className='primary'>
         <Container>
           <Navbar.Brand href="#home">Milhas Trade</Navbar.Brand>
@@ -48,20 +71,25 @@ function App() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-
       <Container className="justify-content-md-center text-center" >
-
+        
         <Row >
           <Col>
             <Card className="mt-5">
               <Card.Body >
+                
                 <Card.Title className="h-100">Hotmilhas</Card.Title>
+                <Button size="sm" style={{ margin: "0 12px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(7)}>7D</Button>
+                <Button size="sm" style={{ margin: "0 12px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(30)}>1M</Button>
+                <Button size="sm" style={{ margin: "0 12px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(180)}>6M</Button>
+                <Button size="sm" style={{ margin: "0 12px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(365)}>1Y</Button>
+                <Button size="sm" style={{ margin: "0 12px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(1825)}>5Y</Button>
                 <div className="d-flex justify-content-center">
-                  <Chart color={monaLisa} data={dataSmiles} dataXAxis={"date"} dataYAxis={"Smiles"} />
+                  <Chart days={daysHotmilhas} color={colorCiaHotmilhas} data={hmData} dataXAxis={"date"} dataYAxis={nameCiaHotmilhas} />
                 </div>
-                <ButtonCia logo={smilesLogo} cia="Smile"></ButtonCia>
-                <ButtonCia logo={tudoAzulLogo} cia="Tudoazul"></ButtonCia>
-                <ButtonCia logo={latampassLogo} cia="Latampass"></ButtonCia>
+                <ButtonCia logo={smilesLogo} cia="Smile" handle={() => handleHotmilhasClick("Gol", monaLisaGol)}></ButtonCia>
+                <ButtonCia logo={tudoAzulLogo} cia="Tudoazul" handle={() => handleHotmilhasClick("Azul", fanBlueAzul)}></ButtonCia>
+                <ButtonCia logo={latampassLogo} cia="Latampass" handle={() => handleHotmilhasClick("Latam", clairvoyantLatam)}></ButtonCia>
 
               </Card.Body>
             </Card>
@@ -71,36 +99,25 @@ function App() {
             <Card className="mt-5">
               <Card.Body >
                 <Card.Title className="h-100">Maxmilhas</Card.Title>
+                <Button size="sm" style={{ margin: "0 12px" }} variant="outline-secondary" onClick={() => setDaysMaxmilhas(7)}>7D</Button>
+                <Button size="sm" style={{ margin: "0 12px" }} variant="outline-secondary" onClick={() => setDaysMaxmilhas(30)}>1M</Button>
+                <Button size="sm" style={{ margin: "0 12px" }} variant="outline-secondary" onClick={() => setDaysMaxmilhas(180)}>6M</Button>
+                <Button size="sm" style={{ margin: "0 12px" }} variant="outline-secondary" onClick={() => setDaysMaxmilhas(365)}>1Y</Button>
+                <Button size="sm" style={{ margin: "0 12px" }} variant="outline-secondary" onClick={() => setDaysMaxmilhas(1825)}>5Y</Button>
                 <div className="d-flex justify-content-center">
-                  <Chart color={fanBlue} data={dataTudoazul} dataXAxis={"date"} dataYAxis={"Tudoazul"} />
+                  <Chart days={daysMaxmilhas} color={colorCiaMaxmilhas} data={maxData} dataXAxis={"date"} dataYAxis={nameCiaMaxmilhas} />
                 </div>
-                <ButtonCia logo={smilesLogo} cia="Smile"></ButtonCia>
-                <ButtonCia logo={tudoAzulLogo} cia="Tudoazul"></ButtonCia>
-                <ButtonCia logo={latampassLogo} cia="Latampass"></ButtonCia>
+                <ButtonCia logo={smilesLogo} cia="Smile" handle={() => handleMaxmilhasClick("Gol", monaLisaGol)}></ButtonCia>
+                <ButtonCia logo={tudoAzulLogo} cia="Tudoazul" handle={() => handleMaxmilhasClick("Azul", fanBlueAzul)}></ButtonCia>
+                <ButtonCia logo={latampassLogo} cia="Latampass" handle={() => handleMaxmilhasClick("Latam", clairvoyantLatam)}></ButtonCia>
 
               </Card.Body>
             </Card>
           </Col>
-
-          <Col>
-            <Card className="mt-5">
-              <Card.Body >
-                <Card.Title className="h-100">Maxmilhas</Card.Title>
-                <div className="d-flex justify-content-center">
-                  <Chart color={clairvoyant} data={dataTudoazul} dataXAxis={"date"} dataYAxis={"Tudoazul"} />
-                </div>
-                <ButtonCia logo={smilesLogo} cia="Smile"></ButtonCia>
-                <ButtonCia logo={tudoAzulLogo} cia="Tudoazul"></ButtonCia>
-                <ButtonCia logo={latampassLogo} cia="Latampass"></ButtonCia>
-
-              </Card.Body>
-            </Card>
-          </Col>
-
-          
 
         </Row>
-
+        {/* <Demo></Demo> */}
+        <SkyscannerSearchWidget />
 
         <h2 className="mt-5" id="noticias">Notícias</h2>
         {newsData.map((news, index) => (
