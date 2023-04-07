@@ -75,7 +75,7 @@ function App() {
 
         <br />
         <a href="https://tp.media/click?shmarker=422082&promo_id=7787&source_type=banner&type=click&campaign_id=200&trs=219937" target="_blank">
-          <img src="https://c200.travelpayouts.com/content?promo_id=7787&shmarker=422082&type=init&trs=219937" width="728" height="90" alt="Cheap flights with cashback" />
+          <img src="https://c200.travelpayouts.com/content?promo_id=7787&shmarker=422082&type=init&trs=219937" width="500" height="90" alt="Cheap flights with cashback" />
         </a>
 
         <Row >
