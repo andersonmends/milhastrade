@@ -53,8 +53,8 @@ function Chart(props) {
     return (
         <>
             <AreaChart
-                width={450}
-                height={250}
+                width={400}
+                height={240}
                 data={data}
                 fontSize={12}
                 margin={{ top: 15, right: 30, left: -20, bottom: 5 }}
