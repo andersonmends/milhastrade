@@ -10,11 +10,12 @@ import Chart from './components/Chart';
 import ButtonCia from './components/ButtonCia';
 import SkyscannerSearchWidget from './components/SkyscannerSearchWidget';
 import { Demo } from './components/Demo';
+import WayAwayWidget from "./components/WayAwayWidget";
 
 function App() {
-  
 
-    const fanBlueAzul = "#14649C"
+
+  const fanBlueAzul = "#14649C"
   const monaLisaGol = "#FCA292"
   const clairvoyantLatam = "#34054C"
   const [daysHotmilhas, setDaysHotmilhas] = useState(7);
@@ -34,7 +35,7 @@ function App() {
     console.log(cia);
     setNameCiaHotmilhas(cia);
     setColorCiaHotmilhas(color);
-    
+
   }
 
   function handleMaxmilhasClick(cia, color) {
@@ -46,9 +47,8 @@ function App() {
 
   return (
     <div>
-    
-      
-      <Navbar bg='primary' variant='dark' expand="lg" className='primary'>
+
+      <Navbar bg='primary' variant='dark' expand="lg" className='primary' >
         <Container>
           <Navbar.Brand href="#home">Milhas Trade</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -72,12 +72,17 @@ function App() {
         </Container>
       </Navbar>
       <Container className="justify-content-md-center text-center" >
-        
+
+        <br />
+        <a href="https://tp.media/click?shmarker=422082&promo_id=7787&source_type=banner&type=click&campaign_id=200&trs=219937" target="_blank">
+          <img src="https://c200.travelpayouts.com/content?promo_id=7787&shmarker=422082&type=init&trs=219937" width="728" height="90" alt="Cheap flights with cashback" />
+        </a>
+
         <Row >
           <Col>
             <Card className="mt-5">
               <Card.Body >
-                
+
                 <Card.Title className="h-100">Hotmilhas</Card.Title>
                 <Button size="sm" style={{ margin: "0 12px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(7)}>7D</Button>
                 <Button size="sm" style={{ margin: "0 12px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(30)}>1M</Button>
@@ -116,10 +121,16 @@ function App() {
           </Col>
 
         </Row>
-        {/* <Demo></Demo> */}
-        <SkyscannerSearchWidget />
 
-        <h2 className="mt-5" id="noticias">Notícias</h2>
+       <br/>
+        <WayAwayWidget></WayAwayWidget>
+       
+        {/* <Demo></Demo> */}
+        {/* <SkyscannerSearchWidget /> */}
+        
+
+
+        {/* <h2 className="mt-5" id="noticias">Notícias</h2>
         {newsData.map((news, index) => (
           <Card key={index} className="mt-3">
             <Card.Body>
@@ -128,7 +139,7 @@ function App() {
               <Button variant="primary"><FaChevronRight /></Button>
             </Card.Body>
           </Card>
-        ))}
+        ))} */}
 
       </Container>
 
@@ -163,8 +174,6 @@ function App() {
           </div>
         </Container>
       </Card.Footer>
-
-
 
 
     </div>
