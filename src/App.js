@@ -74,9 +74,9 @@ function App() {
       <Container className="justify-content-md-center text-center" >
 
         <br />
-        <a href="https://tp.media/click?shmarker=422082&promo_id=7787&source_type=banner&type=click&campaign_id=200&trs=219937" target="_blank">
-          <img src="https://c200.travelpayouts.com/content?promo_id=7787&shmarker=422082&type=init&trs=219937" width="500" height="90" alt="Cheap flights with cashback" />
-        </a>
+        <a href="https://tp.media/click?shmarker=422082&promo_id=7779&source_type=banner&type=click&campaign_id=200&trs=219937" target="_blank"> 
+        <img src="https://c200.travelpayouts.com/content?promo_id=7779&shmarker=422082&type=init&trs=219937" width="468" height="120" alt="Cheap flights with cashback"/> 
+        </a> 
 
         <Row >
           <Col>
