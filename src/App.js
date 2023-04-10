@@ -11,6 +11,7 @@ import ButtonCia from './components/ButtonCia';
 import SkyscannerSearchWidget from './components/SkyscannerSearchWidget';
 import { Demo } from './components/Demo';
 import WayAwayWidget from "./components/WayAwayWidget";
+import ProfitableDisplayNetworkWidget from "./components/ProfitableDisplayNetworkWidget"
 
 function App() {
 
@@ -50,13 +51,13 @@ function App() {
 
       <Navbar bg='primary' variant='dark' expand="lg" className='primary' >
         <Container>
-          <Navbar.Brand href="#home">Milhas Trade</Navbar.Brand>
+          <Navbar.Brand href="#home">Milhastrade</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#link">Link</Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <Nav.Link href="#link">About</Nav.Link>
+              {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">
                   Another action
@@ -66,29 +67,24 @@ function App() {
                 <NavDropdown.Item href="#action/3.4">
                   Separated link
                 </NavDropdown.Item>
-              </NavDropdown>
+              </NavDropdown> */}
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
       <Container className="justify-content-md-center text-center" >
-
-        <br />
-        <a href="https://tp.media/click?shmarker=422082&promo_id=7779&source_type=banner&type=click&campaign_id=200&trs=219937" target="_blank"> 
-        <img src="https://c200.travelpayouts.com/content?promo_id=7779&shmarker=422082&type=init&trs=219937" width="380" height="100" alt="Cheap flights with cashback"/> 
-        </a> 
-
+       
         <Row >
           <Col>
             <Card className="mt-5">
               <Card.Body >
 
                 <Card.Title className="h-100">Hotmilhas</Card.Title>
-                <Button size="sm" style={{ margin: "0 12px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(7)}>7D</Button>
-                <Button size="sm" style={{ margin: "0 12px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(30)}>1M</Button>
-                <Button size="sm" style={{ margin: "0 12px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(180)}>6M</Button>
-                <Button size="sm" style={{ margin: "0 12px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(365)}>1Y</Button>
-                <Button size="sm" style={{ margin: "0 12px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(1825)}>5Y</Button>
+                <Button size="sm" style={{ margin: "0px 5px 0px 20px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(7)}>7D</Button>
+                <Button size="sm" style={{ margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(30)}>1M</Button>
+                <Button size="sm" style={{ margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(180)}>6M</Button>
+                <Button size="sm" style={{ margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(365)}>1Y</Button>
+                <Button size="sm" style={{ margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(1825)}>5Y</Button>
                 <div className="d-flex justify-content-center">
                   <Chart days={daysHotmilhas} color={colorCiaHotmilhas} data={hmData} dataXAxis={"date"} dataYAxis={nameCiaHotmilhas} />
                 </div>
@@ -104,11 +100,11 @@ function App() {
             <Card className="mt-5">
               <Card.Body >
                 <Card.Title className="h-100">Maxmilhas</Card.Title>
-                <Button size="sm" style={{ margin: "0 12px" }} variant="outline-secondary" onClick={() => setDaysMaxmilhas(7)}>7D</Button>
-                <Button size="sm" style={{ margin: "0 12px" }} variant="outline-secondary" onClick={() => setDaysMaxmilhas(30)}>1M</Button>
-                <Button size="sm" style={{ margin: "0 12px" }} variant="outline-secondary" onClick={() => setDaysMaxmilhas(180)}>6M</Button>
-                <Button size="sm" style={{ margin: "0 12px" }} variant="outline-secondary" onClick={() => setDaysMaxmilhas(365)}>1Y</Button>
-                <Button size="sm" style={{ margin: "0 12px" }} variant="outline-secondary" onClick={() => setDaysMaxmilhas(1825)}>5Y</Button>
+                <Button size="sm" style={{ margin: "0px 5px 0px 20px" }} variant="outline-secondary" onClick={() => setDaysMaxmilhas(7)}>7D</Button>
+                <Button size="sm" style={{ margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysMaxmilhas(30)}>1M</Button>
+                <Button size="sm" style={{ margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysMaxmilhas(180)}>6M</Button>
+                <Button size="sm" style={{ margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysMaxmilhas(365)}>1Y</Button>
+                <Button size="sm" style={{ margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysMaxmilhas(1825)}>5Y</Button>
                 <div className="d-flex justify-content-center">
                   <Chart days={daysMaxmilhas} color={colorCiaMaxmilhas} data={maxData} dataXAxis={"date"} dataYAxis={nameCiaMaxmilhas} />
                 </div>
@@ -122,12 +118,13 @@ function App() {
 
         </Row>
 
-       <br/>
+        <br />
+        <ProfitableDisplayNetworkWidget />
         <WayAwayWidget></WayAwayWidget>
-       
+
         {/* <Demo></Demo> */}
         {/* <SkyscannerSearchWidget /> */}
-        
+
 
 
         {/* <h2 className="mt-5" id="noticias">Notícias</h2>

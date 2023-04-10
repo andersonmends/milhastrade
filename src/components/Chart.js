@@ -53,11 +53,11 @@ function Chart(props) {
     return (
         <>
             <AreaChart
-                width={400}
+                width={420}
                 height={250}
                 data={data}
                 fontSize={12}
-                margin={{ top: 15, right: 30, left: -20, bottom: 5 }}
+                margin={{ top: 15, right: 30, left: -0, bottom: 5 }}
             >
                 <defs>
                     <linearGradient id={color} x1="0" y1="0" x2="0" y2="1">
