@@ -53,7 +53,7 @@ function Chart(props) {
     return (
         <>
             <AreaChart
-                width={420}
+                width={380}
                 height={250}
                 data={data}
                 fontSize={12}
@@ -71,18 +71,20 @@ function Chart(props) {
                     dataKey={props.dataXAxis}
                     tickFormatter={(value) => format(new Date(value), "dd MMM")}
                     interval={Math.round(data.length / 2) - 1}
-                    
-                    
+
+
                 />
-                <YAxis 
-                
-                tickFormatter={(value) => `${value.toFixed(2)}`}
+                <YAxis
+
+                    tickFormatter={(value) => "R$" + `${value.toFixed(2)}`}
                     domain={[15, 'auto']}
                     tickCount={5}
                     tickLine={{ stroke: 'black', strokeWidth: 1 }} />
 
                 <CartesianGrid vertical="" />
-                <Tooltip labelFormatter={(value) => format(new Date(value), "dd MMM yyyy")} />
+                <Tooltip
+                    labelFormatter={(value, name) => format(new Date(value), "dd MMM yyyy")}
+                    formatter={(value) => "R$" + value.toFixed(2)} />
                 <Area
                     type="function"
                     dataKey={dataYAxis}

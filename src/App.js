@@ -52,7 +52,7 @@ function App() {
     <div>
 
       <Navbar bg='primary' variant='dark' expand="lg" >
-        <Container>
+        <Container className=''>
           <Navbar.Brand  href="#home">Milhastrade</Navbar.Brand>
           <Navbar.Toggle className='navbar-dark' aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -113,16 +113,9 @@ function App() {
 
         </Row>
 
-        <br />
         <AdsterraNativeBannerWidget />
 
-        {/* <WayAwayWidget></WayAwayWidget> */}
-
-        {/* <SkyscannerSearchWidget /> */}
-
-
-
-        <h2 className="mt-2" id="noticias">Notícias</h2>
+              <h2 className="mt-2" id="noticias">Notícias</h2>
         {newsData.map((news, index) => (
           <Card key={index} className="mt-3">
             <Card.Body>
