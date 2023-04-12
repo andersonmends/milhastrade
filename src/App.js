@@ -12,9 +12,11 @@ import SkyscannerSearchWidget from './components/SkyscannerSearchWidget';
 import { Demo } from './components/Demo';
 import WayAwayWidget from "./components/WayAwayWidget";
 import ProfitableDisplayNetworkWidget from "./components/ProfitableDisplayNetworkWidget"
+import AdscacheWidget from "./components/AdscacheWidget "
+import { Helmet } from 'react-helmet';
+
 
 function App() {
-
 
   const fanBlueAzul = "#14649C"
   const monaLisaGol = "#FCA292"
@@ -47,9 +49,15 @@ function App() {
   }
 
   return (
+
     <div>
 
-      <Navbar bg='primary' variant='dark' expand="lg" className='primary' >
+
+     
+      
+
+
+      <Navbar bg='primary' variant='dark' expand="lg" >
         <Container>
           <Navbar.Brand href="#home">Milhastrade</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -57,7 +65,7 @@ function App() {
             <Nav className="me-auto">
               <Nav.Link href="#home">Home</Nav.Link>
               <Nav.Link href="#link">About</Nav.Link>
-              {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">
                   Another action
@@ -67,13 +75,15 @@ function App() {
                 <NavDropdown.Item href="#action/3.4">
                   Separated link
                 </NavDropdown.Item>
-              </NavDropdown> */}
+              </NavDropdown>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
+
+      <AdscacheWidget></AdscacheWidget>
+
       <Container className="justify-content-md-center text-center" >
-       
         <Row >
           <Col>
             <Card className="mt-5">
@@ -120,14 +130,15 @@ function App() {
 
         <br />
         <ProfitableDisplayNetworkWidget />
-        <WayAwayWidget></WayAwayWidget>
+       
+        {/* <WayAwayWidget></WayAwayWidget> */}
 
         {/* <Demo></Demo> */}
         {/* <SkyscannerSearchWidget /> */}
 
 
 
-        {/* <h2 className="mt-5" id="noticias">Notícias</h2>
+        <h2 className="mt-5" id="noticias">Notícias</h2>
         {newsData.map((news, index) => (
           <Card key={index} className="mt-3">
             <Card.Body>
@@ -136,7 +147,7 @@ function App() {
               <Button variant="primary"><FaChevronRight /></Button>
             </Card.Body>
           </Card>
-        ))} */}
+        ))}
 
       </Container>
 
