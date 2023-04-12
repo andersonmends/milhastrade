@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-export default function ProfitableDisplayNetworkWidget() {
+export default function AdsterraNativeBannerWidget() {
     useEffect(() => {
         const script = document.createElement('script');
         script.type = 'text/javascript';
@@ -16,6 +16,7 @@ export default function ProfitableDisplayNetworkWidget() {
         };
     }, []);
 
-    return <div style={{ display: 'flex', justifyContent: 'center' }}> 
-    <div id="container-b1ea4d63b197a15313cfd34948dd5e48" style={{ display: "flex", width: '350px', justifyContent: 'center' }}  /> </div>;
+    return <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div id="container-b1ea4d63b197a15313cfd34948dd5e48" style={{ display: "flex", width: '350px', justifyContent: 'center' }} />
+    </div>;
 }

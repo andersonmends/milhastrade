@@ -9,10 +9,9 @@ import { hmData, maxData } from "./assets/data";
 import Chart from './components/Chart';
 import ButtonCia from './components/ButtonCia';
 import SkyscannerSearchWidget from './components/SkyscannerSearchWidget';
-import { Demo } from './components/Demo';
 import WayAwayWidget from "./components/WayAwayWidget";
-import ProfitableDisplayNetworkWidget from "./components/ProfitableDisplayNetworkWidget"
-import AdscacheWidget from "./components/AdscacheWidget "
+import AdsterraNativeBannerWidget from "./components/AdsterraNativeBannerWidget"
+import AdsterraBannerWidget from "./components/AdsterraBannerWidget "
 import { Helmet } from 'react-helmet';
 
 
@@ -52,41 +51,25 @@ function App() {
 
     <div>
 
-
-     
-      
-
-
       <Navbar bg='primary' variant='dark' expand="lg" >
         <Container>
-          <Navbar.Brand href="#home">Milhastrade</Navbar.Brand>
+          <Navbar.Brand className='ml-1' href="#home">Milhastrade</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="#home">Home</Nav.Link>
               <Nav.Link href="#link">About</Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
-                </NavDropdown.Item>
-              </NavDropdown>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
 
-      <AdscacheWidget></AdscacheWidget>
+      <AdsterraBannerWidget  ></AdsterraBannerWidget  >
 
       <Container className="justify-content-md-center text-center" >
         <Row >
           <Col>
-            <Card className="mt-5">
+            <Card className="mt-2">
               <Card.Body >
 
                 <Card.Title className="h-100">Hotmilhas</Card.Title>
@@ -107,7 +90,7 @@ function App() {
           </Col>
 
           <Col>
-            <Card className="mt-5">
+            <Card className="mt-2">
               <Card.Body >
                 <Card.Title className="h-100">Maxmilhas</Card.Title>
                 <Button size="sm" style={{ margin: "0px 5px 0px 20px" }} variant="outline-secondary" onClick={() => setDaysMaxmilhas(7)}>7D</Button>
@@ -129,16 +112,15 @@ function App() {
         </Row>
 
         <br />
-        <ProfitableDisplayNetworkWidget />
-       
+        <AdsterraNativeBannerWidget />
+
         {/* <WayAwayWidget></WayAwayWidget> */}
 
-        {/* <Demo></Demo> */}
         {/* <SkyscannerSearchWidget /> */}
 
 
 
-        <h2 className="mt-5" id="noticias">Notícias</h2>
+        <h2 className="mt-2" id="noticias">Notícias</h2>
         {newsData.map((news, index) => (
           <Card key={index} className="mt-3">
             <Card.Body>
