@@ -53,11 +53,13 @@ function App() {
 
       <Navbar bg='primary' variant='dark' expand="lg" >
         <Container>
-          <Navbar.Brand className='ml-1' href="#home">Milhastrade</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Brand  href="#home">Milhastrade</Navbar.Brand>
+          <Navbar.Toggle className='navbar-dark' aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="#home">Home</Nav.Link>
+              <Nav.Link href="#link">Cartões</Nav.Link>
+              <Nav.Link href="#link">Programas</Nav.Link>
               <Nav.Link href="#link">About</Nav.Link>
             </Nav>
           </Navbar.Collapse>
