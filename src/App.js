@@ -80,7 +80,7 @@ function App() {
 
                 <Card.Title className="h-100">Hotmilhas</Card.Title>
                 <Button size="sm" style={{ margin: "0px 5px 0px 20px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(7)}>7D</Button>
-                <Button size="sm" style={{ margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(30)}>1M</Button>
+                <Button size="sm" style={{ margin: "0 5px", backgroundColor: daysHotmilhas === 30 ? "#EFEFEF " : "white" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(30)}>1M</Button>
                 <Button size="sm" style={{ margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(180)}>6M</Button>
                 <Button size="sm" style={{ margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(365)}>1Y</Button>
                 <Button size="sm" style={{ margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(1825)}>5Y</Button>
