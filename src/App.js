@@ -27,8 +27,8 @@ function App() {
   const [colorCiaHotmilhas, setColorCiaHotmilhas] = useState(monaLisaGol);
   const [nameCiaMaxmilhas, setNameCiaMaxmilhas] = useState("Latam");
   const [colorCiaMaxmilhas, setColorCiaMaxmilhas] = useState(clairvoyantLatam);
-  const [selectedCiaHotmilhas, setselectedCiaHotmilhas] = useState("");
-  const [selectedCiaMaxmilhas, setselectedCiaMaxmilhas] = useState("");
+  const [selectedCiaHotmilhas, setselectedCiaHotmilhas] = useState("Smiles");
+  const [selectedCiaMaxmilhas, setselectedCiaMaxmilhas] = useState("Latampass");
 
   const newsData = [
     { title: 'Título da Notícia 1', description: 'Descrição da Notícia 1' },
@@ -55,9 +55,9 @@ function App() {
 
     <div>
 
-      <Navbar bg='primary' variant='dark' expand="lg" >
+      <Navbar bg='primary' variant='dark' expand="lg" className='pl-1' >
         <Container className=''>
-          <Navbar.Brand href="#home">Milhastrade</Navbar.Brand>
+          <Navbar.Brand href="#home"> Milhastrade</Navbar.Brand>
           <Navbar.Toggle className='navbar-dark' aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
@@ -79,15 +79,15 @@ function App() {
               <Card.Body >
 
                 <Card.Title className="h-100">Hotmilhas</Card.Title>
-                <Button size="sm" style={{ margin: "0px 5px 0px 20px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(7)}>7D</Button>
-                <Button size="sm" style={{ margin: "0 5px", backgroundColor: daysHotmilhas === 30 ? "#EFEFEF " : "white" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(30)}>1M</Button>
-                <Button size="sm" style={{ margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(180)}>6M</Button>
-                <Button size="sm" style={{ margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(365)}>1Y</Button>
-                <Button size="sm" style={{ margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(1825)}>5Y</Button>
+                <Button size="sm" style={{ outline: daysHotmilhas === 7 ? "1px solid #ddd  " : "none", margin: "0px 5px 0px 20px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(7)}>7D</Button>
+                <Button size="sm" style={{ outline: daysHotmilhas === 30 ? "1px solid #ddd  " : "none", margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(30)}>1M</Button>
+                <Button size="sm" style={{ outline: daysHotmilhas === 180 ? "1px solid #ddd  " : "none", margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(180)}>6M</Button>
+                <Button size="sm" style={{ outline: daysHotmilhas === 365 ? "1px solid #ddd " : "none", margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(365)}>1Y</Button>
+                <Button size="sm" style={{ outline: daysHotmilhas === 1825 ? "1px solid #ddd " : "none", margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(1825)}>5Y</Button>
                 <div className="d-flex justify-content-center">
                   <Chart days={daysHotmilhas} color={colorCiaHotmilhas} data={hmData} dataXAxis={"date"} dataYAxis={nameCiaHotmilhas} />
                 </div>
-                <ButtonCia selectedCia={selectedCiaHotmilhas} logo={smilesLogo} cia="Smile" handle={() => handleHotmilhasClick("Gol", monaLisaGol, "Smile")}></ButtonCia>
+                <ButtonCia selectedCia={selectedCiaHotmilhas} logo={smilesLogo} cia="Smiles" handle={() => handleHotmilhasClick("Gol", monaLisaGol, "Smiles")}></ButtonCia>
                 <ButtonCia selectedCia={selectedCiaHotmilhas} logo={tudoAzulLogo} cia="Tudoazul" handle={() => handleHotmilhasClick("Azul", fanBlueAzul, "Tudoazul")}></ButtonCia>
                 <ButtonCia selectedCia={selectedCiaHotmilhas} logo={latampassLogo} cia="Latampass" handle={() => handleHotmilhasClick("Latam", clairvoyantLatam, "Latampass")}></ButtonCia>
 
@@ -99,15 +99,15 @@ function App() {
             <Card className="mt-2">
               <Card.Body >
                 <Card.Title className="h-100">Maxmilhas</Card.Title>
-                <Button size="sm" style={{ margin: "0px 5px 0px 20px" }} variant="outline-secondary" onClick={() => setDaysMaxmilhas(7)}>7D</Button>
-                <Button size="sm" style={{ margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysMaxmilhas(30)}>1M</Button>
-                <Button size="sm" style={{ margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysMaxmilhas(180)}>6M</Button>
-                <Button size="sm" style={{ margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysMaxmilhas(365)}>1Y</Button>
-                <Button size="sm" style={{ margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysMaxmilhas(1825)}>5Y</Button>
+                <Button size="sm" style={{ outline: daysMaxmilhas === 7 ? "1px solid #ddd" : "none", margin: "0px 5px 0px 20px" }} variant="outline-secondary" onClick={() => setDaysMaxmilhas(7)}>7D</Button>
+                <Button size="sm" style={{ outline: daysMaxmilhas === 30 ? "1px solid #ddd" : "none", margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysMaxmilhas(30)}>1M</Button>
+                <Button size="sm" style={{ outline: daysMaxmilhas === 180 ? "1px solid #ddd" : "none", margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysMaxmilhas(180)}>6M</Button>
+                <Button size="sm" style={{ outline: daysMaxmilhas === 365 ? "1px solid #ddd" : "none", margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysMaxmilhas(365)}>1Y</Button>
+                <Button size="sm" style={{ outline: daysMaxmilhas === 1825 ? "1px solid #ddd" : "none", margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysMaxmilhas(1825)}>5Y</Button>
                 <div className="d-flex justify-content-center">
                   <Chart days={daysMaxmilhas} color={colorCiaMaxmilhas} data={maxData} dataXAxis={"date"} dataYAxis={nameCiaMaxmilhas} />
                 </div>
-                <ButtonCia selectedCia={selectedCiaMaxmilhas} logo={smilesLogo} cia="Smile" handle={() => handleMaxmilhasClick("Gol", monaLisaGol, "Smile")}></ButtonCia>
+                <ButtonCia selectedCia={selectedCiaMaxmilhas} logo={smilesLogo} cia="Smiles" handle={() => handleMaxmilhasClick("Gol", monaLisaGol, "Smiles")}></ButtonCia>
                 <ButtonCia selectedCia={selectedCiaMaxmilhas} logo={tudoAzulLogo} cia="Tudoazul" handle={() => handleMaxmilhasClick("Azul", fanBlueAzul, "Tudoazul")}></ButtonCia>
                 <ButtonCia selectedCia={selectedCiaMaxmilhas} logo={latampassLogo} cia="Latampass" handle={() => handleMaxmilhasClick("Latam", clairvoyantLatam, "Latampass")}></ButtonCia>
               </Card.Body>
@@ -117,7 +117,7 @@ function App() {
         </Row>
 
         <AdsterraNativeBannerWidget />
-        <AdscashBannerWidget></AdscashBannerWidget>
+       
 
         <h2 className="mt-2" id="noticias">Notícias</h2>
         {newsData.map((news, index) => (
@@ -132,6 +132,7 @@ function App() {
 
       </Container>
 
+      {/* <AdscashBannerWidget /> */}
 
       <Card.Footer className="text-white bg-primary">
         <Container>

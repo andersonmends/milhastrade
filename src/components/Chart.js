@@ -83,7 +83,7 @@ function Chart(props) {
 
                 <CartesianGrid vertical="" />
                 <Tooltip
-                    labelFormatter={(value, name) => format(new Date(value), "dd MMM yyyy")}
+                    labelFormatter={(value) => format(new Date(value), "dd MMM yyyy")}
                     formatter={(value) => "R$" + value.toFixed(2)} />
                 <Area
                     type="function"

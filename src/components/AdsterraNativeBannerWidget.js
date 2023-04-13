@@ -17,6 +17,6 @@ export default function AdsterraNativeBannerWidget() {
     }, []);
 
     return <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <div id="container-b1ea4d63b197a15313cfd34948dd5e48" style={{ display: "flex", width: '350px', justifyContent: 'center' }} />
+        <div id="container-b1ea4d63b197a15313cfd34948dd5e48" style={{ display: "flex", width: '', justifyContent: 'center' }} />
     </div>;
 }

@@ -1,18 +1,45 @@
-import React, { useEffect } from 'react';
+// import React, { useEffect } from 'react';
 
-function AdscashBannerWidget() {
+// function AdscashBannerWidget() {
+//   useEffect(() => {
+//     const script = document.createElement('script');
+//     script.src = "//brightonclick.com/a/display.php?r=6903718";
+//     script.async = true;
+//     document.body.appendChild(script);
+
+//     return () => {
+//       document.body.removeChild(script);
+//     }
+//   }, []);
+
+//   return null;
+// }
+
+// export default AdscashBannerWidget;
+
+import React, { useEffect, useRef } from 'react';
+
+export default function AdscashBannerWidget() {
+  const divRef = useRef(null);
+
   useEffect(() => {
     const script = document.createElement('script');
     script.src = "//brightonclick.com/a/display.php?r=6903718";
     script.async = true;
-    document.body.appendChild(script);
+
+    // adiciona o script ao elemento div
+    divRef.current.appendChild(script);
 
     return () => {
-      document.body.removeChild(script);
-    }
+      divRef.current.removeChild(script);
+    };
   }, []);
 
-  return null;
-}
+  const divStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    margim: "10"
+  };
 
-export default AdscashBannerWidget;
+  return <div ref={divRef} style={divStyle} />;
+}
