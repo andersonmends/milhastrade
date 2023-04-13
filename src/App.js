@@ -13,6 +13,7 @@ import WayAwayWidget from "./components/WayAwayWidget";
 import AdsterraNativeBannerWidget from "./components/AdsterraNativeBannerWidget"
 import AdsterraBannerWidget from "./components/AdsterraBannerWidget "
 import { Helmet } from 'react-helmet';
+import AdscashBannerWidget from './components/AdscashBannerWidget';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
   const [colorCiaHotmilhas, setColorCiaHotmilhas] = useState(monaLisaGol);
   const [nameCiaMaxmilhas, setNameCiaMaxmilhas] = useState("Latam");
   const [colorCiaMaxmilhas, setColorCiaMaxmilhas] = useState(clairvoyantLatam);
+  const [selectedCia, setselectedCia] = useState("");
 
   const newsData = [
     { title: 'Título da Notícia 1', description: 'Descrição da Notícia 1' },
@@ -37,6 +39,7 @@ function App() {
     console.log(cia);
     setNameCiaHotmilhas(cia);
     setColorCiaHotmilhas(color);
+    setselectedCia(cia);
 
   }
 
@@ -83,7 +86,7 @@ function App() {
                 <div className="d-flex justify-content-center">
                   <Chart days={daysHotmilhas} color={colorCiaHotmilhas} data={hmData} dataXAxis={"date"} dataYAxis={nameCiaHotmilhas} />
                 </div>
-                <ButtonCia logo={smilesLogo} cia="Smile" handle={() => handleHotmilhasClick("Gol", monaLisaGol)}></ButtonCia>
+                <ButtonCia selectedCia={selectedCia} logo={smilesLogo} cia="Smile" handle={() => handleHotmilhasClick("Gol", monaLisaGol)}></ButtonCia>
                 <ButtonCia logo={tudoAzulLogo} cia="Tudoazul" handle={() => handleHotmilhasClick("Azul", fanBlueAzul)}></ButtonCia>
                 <ButtonCia logo={latampassLogo} cia="Latampass" handle={() => handleHotmilhasClick("Latam", clairvoyantLatam)}></ButtonCia>
 
@@ -114,6 +117,7 @@ function App() {
         </Row>
 
         <AdsterraNativeBannerWidget />
+        <AdscashBannerWidget></AdscashBannerWidget>
 
               <h2 className="mt-2" id="noticias">Notícias</h2>
         {newsData.map((news, index) => (
