@@ -6,8 +6,11 @@ import { useState } from "react";
     return(
         
         <Button
-            style={{backgroundColor: props.selectedCia === 'Gol' ? '#007bff' : 'white', width: "120px", height: "34px", padding: "0px", alignItems: 'center', margin:"0 5px" }}
-            variant="outline-secondary" onClick={props.handle}>
+            style={{backgroundColor: props.selectedCia === 'Gol' ? '#EFEFEF  ' : 'white', width: "120px", height: "34px", padding: "0px", alignItems: 'center', margin:"0 5px" }}
+            variant="outline-secondary" 
+            onClick={props.handle}
+            // className={props.selectedCia === 'Gol' ? '#ddd' : 'white'}
+            >
             <img src={props.logo} align="left" style={{
                 width: "25px",
                 height: "25px",
