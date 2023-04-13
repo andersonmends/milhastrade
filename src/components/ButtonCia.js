@@ -6,7 +6,7 @@ import { useState } from "react";
     return(
         
         <Button
-            style={{backgroundColor: props.selectedCia === 'Gol' ? '#EFEFEF  ' : 'white', width: "120px", height: "34px", padding: "0px", alignItems: 'center', margin:"0 5px" }}
+            style={{backgroundColor: props.selectedCia === props.cia ? '#EFEFEF  ' : 'white', width: "120px", height: "34px", padding: "0px", alignItems: 'center', margin:"0 5px" }}
             variant="outline-secondary" 
             onClick={props.handle}
             // className={props.selectedCia === 'Gol' ? '#ddd' : 'white'}

@@ -27,7 +27,8 @@ function App() {
   const [colorCiaHotmilhas, setColorCiaHotmilhas] = useState(monaLisaGol);
   const [nameCiaMaxmilhas, setNameCiaMaxmilhas] = useState("Latam");
   const [colorCiaMaxmilhas, setColorCiaMaxmilhas] = useState(clairvoyantLatam);
-  const [selectedCia, setselectedCia] = useState("");
+  const [selectedCiaHotmilhas, setselectedCiaHotmilhas] = useState("");
+  const [selectedCiaMaxmilhas, setselectedCiaMaxmilhas] = useState("");
 
   const newsData = [
     { title: 'Título da Notícia 1', description: 'Descrição da Notícia 1' },
@@ -35,19 +36,19 @@ function App() {
     { title: 'Título da Notícia 3', description: 'Descrição da Notícia 3' },
   ];
 
-  function handleHotmilhasClick(cia, color) {
-    console.log(cia);
-    setNameCiaHotmilhas(cia);
+  function handleHotmilhasClick(ciaName, color, ciaPrograma) {
+    console.log(ciaName);
+    setNameCiaHotmilhas(ciaName);
     setColorCiaHotmilhas(color);
-    setselectedCia(cia);
+    setselectedCiaHotmilhas(ciaPrograma);
 
   }
 
-  function handleMaxmilhasClick(cia, color) {
-    console.log(cia);
-    setNameCiaMaxmilhas(cia);
+  function handleMaxmilhasClick(ciaName, color, ciaPrograma) {
+    console.log(ciaName);
+    setNameCiaMaxmilhas(ciaName);
     setColorCiaMaxmilhas(color);
-
+    setselectedCiaMaxmilhas(ciaPrograma);
   }
 
   return (
@@ -56,7 +57,7 @@ function App() {
 
       <Navbar bg='primary' variant='dark' expand="lg" >
         <Container className=''>
-          <Navbar.Brand  href="#home">Milhastrade</Navbar.Brand>
+          <Navbar.Brand href="#home">Milhastrade</Navbar.Brand>
           <Navbar.Toggle className='navbar-dark' aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
@@ -86,9 +87,9 @@ function App() {
                 <div className="d-flex justify-content-center">
                   <Chart days={daysHotmilhas} color={colorCiaHotmilhas} data={hmData} dataXAxis={"date"} dataYAxis={nameCiaHotmilhas} />
                 </div>
-                <ButtonCia selectedCia={selectedCia} logo={smilesLogo} cia="Smile" handle={() => handleHotmilhasClick("Gol", monaLisaGol)}></ButtonCia>
-                <ButtonCia logo={tudoAzulLogo} cia="Tudoazul" handle={() => handleHotmilhasClick("Azul", fanBlueAzul)}></ButtonCia>
-                <ButtonCia logo={latampassLogo} cia="Latampass" handle={() => handleHotmilhasClick("Latam", clairvoyantLatam)}></ButtonCia>
+                <ButtonCia selectedCia={selectedCiaHotmilhas} logo={smilesLogo} cia="Smile" handle={() => handleHotmilhasClick("Gol", monaLisaGol, "Smile")}></ButtonCia>
+                <ButtonCia selectedCia={selectedCiaHotmilhas} logo={tudoAzulLogo} cia="Tudoazul" handle={() => handleHotmilhasClick("Azul", fanBlueAzul, "Tudoazul")}></ButtonCia>
+                <ButtonCia selectedCia={selectedCiaHotmilhas} logo={latampassLogo} cia="Latampass" handle={() => handleHotmilhasClick("Latam", clairvoyantLatam, "Latampass")}></ButtonCia>
 
               </Card.Body>
             </Card>
@@ -106,10 +107,9 @@ function App() {
                 <div className="d-flex justify-content-center">
                   <Chart days={daysMaxmilhas} color={colorCiaMaxmilhas} data={maxData} dataXAxis={"date"} dataYAxis={nameCiaMaxmilhas} />
                 </div>
-                <ButtonCia logo={smilesLogo} cia="Smile" handle={() => handleMaxmilhasClick("Gol", monaLisaGol)}></ButtonCia>
-                <ButtonCia logo={tudoAzulLogo} cia="Tudoazul" handle={() => handleMaxmilhasClick("Azul", fanBlueAzul)}></ButtonCia>
-                <ButtonCia logo={latampassLogo} cia="Latampass" handle={() => handleMaxmilhasClick("Latam", clairvoyantLatam)}></ButtonCia>
-
+                <ButtonCia selectedCia={selectedCiaMaxmilhas} logo={smilesLogo} cia="Smile" handle={() => handleMaxmilhasClick("Gol", monaLisaGol, "Smile")}></ButtonCia>
+                <ButtonCia selectedCia={selectedCiaMaxmilhas} logo={tudoAzulLogo} cia="Tudoazul" handle={() => handleMaxmilhasClick("Azul", fanBlueAzul, "Tudoazul")}></ButtonCia>
+                <ButtonCia selectedCia={selectedCiaMaxmilhas} logo={latampassLogo} cia="Latampass" handle={() => handleMaxmilhasClick("Latam", clairvoyantLatam, "Latampass")}></ButtonCia>
               </Card.Body>
             </Card>
           </Col>
@@ -119,7 +119,7 @@ function App() {
         <AdsterraNativeBannerWidget />
         <AdscashBannerWidget></AdscashBannerWidget>
 
-              <h2 className="mt-2" id="noticias">Notícias</h2>
+        <h2 className="mt-2" id="noticias">Notícias</h2>
         {newsData.map((news, index) => (
           <Card key={index} className="mt-3">
             <Card.Body>
