@@ -84,16 +84,34 @@ function App() {
                 <Button size="sm" style={{ outline: daysHotmilhas === 180 ? "1px solid #ddd  " : "none", margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(180)}>6M</Button>
                 <Button size="sm" style={{ outline: daysHotmilhas === 365 ? "1px solid #ddd " : "none", margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(365)}>1Y</Button>
                 <Button size="sm" style={{ outline: daysHotmilhas === 1825 ? "1px solid #ddd " : "none", margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(1825)}>5Y</Button>
-                <div className="d-flex justify-content-center">
-                  <Chart days={daysHotmilhas} color={colorCiaHotmilhas} data={hmData} dataXAxis={"date"} dataYAxis={nameCiaHotmilhas} />
-                </div>
+                <Row>
+                  <Col sm={10}>
+                    <div className="d-flex justify-content-center">
+                      <Chart days={daysHotmilhas} color={colorCiaHotmilhas} data={hmData} dataXAxis={"date"} dataYAxis={nameCiaHotmilhas} />
+                    </div>
+                  </Col>
+                  <Col sm={2}> 
+                  <Row>
+                      <Col className="d-flex  justify-content-end" ><Card.Text>R$10.00</Card.Text></Col>
+                      
+                      <Col className="d-flex" ><Card.Text>**1,05%</Card.Text></Col>
+                  </Row>
+                    
+                  </Col>
+                </Row>
+               
+                
                 <ButtonCia selectedCia={selectedCiaHotmilhas} logo={smilesLogo} cia="Smiles" handle={() => handleHotmilhasClick("Gol", monaLisaGol, "Smiles")}></ButtonCia>
                 <ButtonCia selectedCia={selectedCiaHotmilhas} logo={tudoAzulLogo} cia="Tudoazul" handle={() => handleHotmilhasClick("Azul", fanBlueAzul, "Tudoazul")}></ButtonCia>
                 <ButtonCia selectedCia={selectedCiaHotmilhas} logo={latampassLogo} cia="Latampass" handle={() => handleHotmilhasClick("Latam", clairvoyantLatam, "Latampass")}></ButtonCia>
 
               </Card.Body>
+              
+
             </Card>
           </Col>
+
+          
 
           <Col>
             <Card className="mt-2">
