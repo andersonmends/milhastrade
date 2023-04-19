@@ -90,11 +90,11 @@ function App() {
                       <Chart days={daysHotmilhas} color={colorCiaHotmilhas} data={hmData} dataXAxis={"date"} dataYAxis={nameCiaHotmilhas} />
                     </div>
                   </Col>
-                  <Col sm={2}> 
-                  <Row>
-                      <Col className="d-flex  justify-content-end" ><Card.Text>R$10.00</Card.Text></Col>
+                  <Col sm={1}> 
+                    <Row >
+                      <Col className="d-flex" ><Card.Subtitle className='text-success'> R$10.00 <i class="fa fa-caret-down"></i>1,05%</Card.Subtitle></Col>
                       
-                      <Col className="d-flex" ><Card.Text>**1,05%</Card.Text></Col>
+                      {/* <Col className="d-flex  justify-content-center" ><Card.Text></Card.Text></Col> */}
                   </Row>
                     
                   </Col>
@@ -176,6 +176,7 @@ function App() {
                 </a>
                 <a href="#" target="_blank">
                   <i className="fab fa-github pr-3 text-white" />
+                  
                 </a>
               </div>
             </div>
