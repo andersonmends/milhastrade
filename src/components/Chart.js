@@ -19,7 +19,7 @@ function Chart(props) {
 
     function filterData(days) {
 
-        const currentDate = new Date("2023-03-23");
+        const currentDate = new Date("2023-04-14");
         const filteredData = sortedData.filter((item) => {
             const date = new Date(item[props.dataXAxis]);
             const diffTime = Math.abs(currentDate - date);
@@ -77,8 +77,8 @@ function Chart(props) {
                 <YAxis
 
                     tickFormatter={(value) => "R$" + `${value.toFixed(2)}`}
-                    domain={[15, 'auto']}
-                    tickCount={5}
+                    domain={[8, 32]}
+                    tickCount={4}
                     tickLine={{ stroke: 'black', strokeWidth: 1 }} />
 
                 <CartesianGrid vertical="" />
