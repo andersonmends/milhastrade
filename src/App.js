@@ -71,8 +71,9 @@ function App() {
         </Container>
       </Navbar>
       <Navbar className='justify-content-center'>
-        <small>Acompanhe a cotação de milhas com o histórico de preços e decida o momento certo de comprar e vender milhas
-        </small></Navbar>
+        <Card.Text style={{ fontSize: '14px' }}>Acompanhe a cotação de milhas com o histórico de preços e decida o momento certo de comprar e vender milhas</Card.Text>
+        
+        </Navbar>
 
 
 
