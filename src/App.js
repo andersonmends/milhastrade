@@ -36,6 +36,14 @@ function App() {
     { title: 'Título da Notícia 3', description: 'Descrição da Notícia 3' },
   ];
 
+  function getPercent(data) {
+    const today = 12//data[3].Latam;
+    const yesterday = 10//data[4].Latam;
+
+    const percent = ((today - yesterday) * 100) / yesterday
+    return ("+"+percent);
+  }
+
   function handleHotmilhasClick(ciaName, color, ciaPrograma) {
     console.log(ciaName);
     setNameCiaHotmilhas(ciaName);
@@ -71,9 +79,9 @@ function App() {
         </Container>
       </Navbar>
       <Navbar className='justify-content-center'>
-        <Card.Text style={{ fontSize: '14px' }}>Acompanhe a cotação de milhas com o histórico de preços e decida o momento certo de comprar e vender milhas</Card.Text>
-        
-        </Navbar>
+        <Card.Text style={{ fontSize: '14px' }}> Acompanhe a cotação de milhas com o histórico de preços e decida o momento certo de comprar e vender milhas</Card.Text>
+
+      </Navbar>
 
 
 
@@ -86,7 +94,7 @@ function App() {
               <Card.Body >
 
                 <Card.Title className="h-100">Hotmilhas</Card.Title>
-                <Card.Subtitle className='text-success mt-1 mb-1'> R$10.00 <i class="fa fa-caret-up"></i>1,05%</Card.Subtitle>
+                <Card.Subtitle className='text-success mt-1 mb-1'> R${hmData[2].Latam} {getPercent(hmData)}%</Card.Subtitle>
                 <Button size="sm" style={{ outline: daysHotmilhas === 7 ? "1px solid #ddd  " : "none", margin: "0px 5px 0px 20px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(7)}>7D</Button>
                 <Button size="sm" style={{ outline: daysHotmilhas === 30 ? "1px solid #ddd  " : "none", margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(30)}>1M</Button>
                 <Button size="sm" style={{ outline: daysHotmilhas === 180 ? "1px solid #ddd  " : "none", margin: "0 5px" }} variant="outline-secondary" onClick={() => setDaysHotmilhas(180)}>6M</Button>
