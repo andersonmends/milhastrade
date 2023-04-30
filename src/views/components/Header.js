@@ -20,7 +20,7 @@ function Header() {
 
                 </Container>
             </Navbar>
-            <Navbar className='justify-content-center mb-1'>
+            <Navbar className='justify-content-center text-center mb-1'>
                 <Card.Text style={{ fontSize: '12px' }}> Acompanhe a cotação de milhas da Hotmilhas e Maxmilhas com gráfico
                     do histórico de preços,e com base nos dados decida o momento certo de comprar, vender milhas ou negociar no
                     particular
