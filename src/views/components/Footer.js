@@ -1,16 +1,16 @@
-import React, { Component } from "react";
-// import "./Footer.css";
+import React from "react";
+import { Card, Container} from 'react-bootstrap';
 
-class Footer extends Component {
-    render() {
+function Footer () {
+   
         return (
-            <footer className="container-fluid bg-dark text-white mt-5 ">
-                <div className="container">
+            <Card.Footer className="text-white bg-primary">
+                <Container>
                     <div className="row py-3">
                         <div className="col-md-6 text-left">
                             Designed by{" "}
-                            <a href="#" target="_blank">
-                                Develop
+                            <a href="#" target="_blank" className='text-white'>
+                                Midhall
                             </a>
                             &#169; {new Date().getFullYear()}
                         </div>
@@ -18,24 +18,25 @@ class Footer extends Component {
                             <div>
                                 <span>Follow Us: </span>
                                 <a href="#" target="_blank">
-                                    <i className="fab fa-facebook-f px-3" />
+                                    <i className="fab fa-facebook-f px-3 text-white" />
                                 </a>
                                 <a href="#" target="_blank">
-                                    <i className="fab fa-twitter pr-3" />
+                                    <i className="fab fa-twitter pr-3 text-white" />
                                 </a>
                                 <a href="#" target="_blank">
-                                    <i className="fab fa-youtube pr-3" />
+                                    <i className="fab fa-youtube pr-3 text-white" />
                                 </a>
                                 <a href="#" target="_blank">
-                                    <i className="fab fa-github pr-3" />
+                                    <i className="fab fa-github pr-3 text-white" />
+
                                 </a>
                             </div>
                         </div>
                     </div>
-                </div>
-            </footer>
+                </Container>
+            </Card.Footer>
         );
-    }
+    
 }
 
 export default Footer;

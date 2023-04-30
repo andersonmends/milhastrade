@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './custom.scss';
+
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import './App.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Home from "./views/pages/Home"
 
 
 
