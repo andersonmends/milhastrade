@@ -19,7 +19,7 @@
 
 import React, { useEffect, useRef } from 'react';
 
-export default function AdscashBannerWidget() {
+export function AdscashWidget() {
   const divRef = useRef(null);
 
   useEffect(() => {
