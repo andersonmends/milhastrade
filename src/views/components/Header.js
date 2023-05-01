@@ -28,7 +28,7 @@ function Header() {
 
             </Navbar>
 
-            <Banner468x60 />
+            
         </>
     )
 }

@@ -138,7 +138,7 @@ function Home() {
 	return (
 
 		<>
-			<SocialBar />
+			
 			<Container className="justify-content-md-center text-center" >
 				<Row >
 					<Col>
