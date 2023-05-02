@@ -11,7 +11,7 @@ import SkyscannerSearchWidget from '../components/SkyscannerSearchWidget';
 import WayAwayWidget from "../components/WayAwayWidget";
 import { Banner468x60, Banner300x250, NativeBanner, SocialBar } from "../components/AdsterraWidget "
 import { format } from "date-fns";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function Home() {
 
@@ -289,19 +289,19 @@ function Home() {
         
         <Row xs={1} md={2} lg={4} className="g-4">
           {newsData.map((news, index) => (
-            <React.Fragment>
+           
               <Col>
-                <Link to="/about" className="text-decoration-none">
+              <NavLink to="/about" className="text-decoration-none">
                   <Card key={index} className="mt-3 cardTest">
                     <Card.Img variant="top" src={news.Image} />
                     <Card.Body>
                       <Card.Title className="text-decoration-none text-dark">{news.title}</Card.Title>
                     </Card.Body>
                   </Card>
-                </Link>
+              </NavLink>
               </Col>
-              {index === 1 ? <NativeBanner /> : null}
-            </React.Fragment>
+             
+           
           ))}
         </Row>
 

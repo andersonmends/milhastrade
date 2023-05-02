@@ -5,19 +5,21 @@ import Footer from './views/components/Footer';
 import About from './views/pages/About';
 import Cartoes from "./views/pages/Cartoes"
 import Programas from "./views/pages/Programas"
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { NewsPage } from './views/pages/NewsPage';
 
 function App() {
   return (
     <>
       <Header />
       <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/cartoes" component={Cartoes} />
-          <Route path="/programas" component={Programas} />
-        </Switch>
+        <Routes>
+          <Route exact path="/" element={<Home/>} />
+          <Route path="/about" element={<About/>} />
+          <Route path="/cartoes" element={<Cartoes/>} />
+          <Route path="/programas" element={<Programas/>} />
+          <Route path="/news" element={<NewsPage/>}></Route>
+        </Routes>
       </BrowserRouter>
       <Footer></Footer>
     </>
