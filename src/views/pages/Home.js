@@ -286,22 +286,22 @@ function Home() {
 
         <h2 className="mt-2" id="noticias">Notícias</h2>
 
-        
+
         <Row xs={1} md={2} lg={4} className="g-4">
           {newsData.map((news, index) => (
-           
+            <React.Fragment key={index}>
               <Col>
-              <NavLink to="/about" className="text-decoration-none">
+                <NavLink to="/about" className="text-decoration-none">
                   <Card key={index} className="mt-3 cardTest">
                     <Card.Img variant="top" src={news.Image} />
                     <Card.Body>
                       <Card.Title className="text-decoration-none text-dark">{news.title}</Card.Title>
                     </Card.Body>
                   </Card>
-              </NavLink>
+                </NavLink>
               </Col>
-             
-           
+              {index === 1 ? <NativeBanner /> : null}
+            </React.Fragment>
           ))}
         </Row>
 
