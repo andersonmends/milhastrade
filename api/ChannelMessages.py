@@ -62,7 +62,7 @@ async def main(phone):
     my_channel = await client.get_entity(entity)
 
     # replace with your desired date, for all messages set data before telegram channel
-    start_date = datetime(2023, 3, 25, 0, 0)  
+    start_date = datetime(2019, 3, 25, 0, 0)  
     
 
     offset_id = 0
@@ -138,7 +138,7 @@ async def main(phone):
         
     # ready_data.reverse() ##to reverse data extract order
 
-    with open('channel-messages.json', 'w') as outfile:
+    with open('..\src\\assets\channel-messages.json', 'w') as outfile:
         json.dump(ready_data, outfile, cls=DateTimeEncoder)
 
 with client:
