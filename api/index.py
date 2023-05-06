@@ -1,6 +1,6 @@
 import configparser
 import json
-import asyncio
+import os
 from datetime import datetime, timedelta
 import re
 
@@ -8,8 +8,12 @@ from telethon import TelegramClient
 from telethon.errors import SessionPasswordNeededError
 from telethon.tl.functions.messages import GetHistoryRequest
 from telethon.tl.types import PeerChannel
+from telethon.sessions import StringSession
+from os.path import join
+from http.server import BaseHTTPRequestHandler
 
 # extract messages from telegram channel from date X
+
 
 # some functions to parse json date
 class DateTimeEncoder(json.JSONEncoder):
@@ -22,26 +26,37 @@ class DateTimeEncoder(json.JSONEncoder):
 
         return json.JSONEncoder.default(self, o)
 
+# class handler(BaseHTTPRequestHandler):
+ 
+#     def do_GET(self):
+#         self.send_response(200)
+#         self.send_header('Content-type','text/plain')
+#         self.end_headers()
+#         self.wfile.write('Hello, world!'.encode('utf-8'))
+#         return
+
 # Reading Configs
 config = configparser.ConfigParser()
 config.read("config.ini")
 
 # Setting configuration values
-api_id = config['Telegram']['api_id']
-api_hash = config['Telegram']['api_hash']
+api_id = os.environ.get('api_id') #config['Telegram']['api_id']
+api_hash = os.environ.get('api_hash') 
 
 api_hash = str(api_hash)
 
-phone = config['Telegram']['phone']
-username = config['Telegram']['username']
-url = config['Telegram']["channel_url"]
+phone = os.environ.get('phone')
+username = os.environ.get('username')
+url = os.environ.get('channel_url')
 
+session_string = os.environ.get('session_string')
 # Create the client and connect
-client = TelegramClient(username, api_id, api_hash)
+client = TelegramClient(StringSession(session_string), api_id, api_hash)
 
 async def main(phone):
     await client.start()
     print("Client Created")
+    #print(client.session.save())
     # Ensure you're authorized
     if await client.is_user_authorized() == False:
         await client.send_code_request(phone)
@@ -138,7 +153,7 @@ async def main(phone):
         
     # ready_data.reverse() ##to reverse data extract order
 
-    with open('channel-messages.json', 'w') as outfile:
+    with open('vercel_build_output/teste.json', 'w') as outfile:
         json.dump(ready_data, outfile, cls=DateTimeEncoder)
 
 with client:
