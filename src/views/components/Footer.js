@@ -23,11 +23,9 @@ function Footer () {
                                 <a href="#" target="_blank">
                                     <i className="fab fa-twitter pr-3 text-white" />
                                 </a>
-                                <a href="#" target="_blank">
-                                    <i className="fab fa-youtube pr-3 text-white" />
-                                </a>
-                                <a href="#" target="_blank">
-                                    <i className="fab fa-github pr-3 text-white" />
+                                
+                                <a href="https://instagram.com/milhas.trade?igshid=NTc4MTIwNjQ2YQ==" target="_blank">
+                                    <i className="fab fa-instagram pr-3 text-white" />
 
                                 </a>
                             </div>
