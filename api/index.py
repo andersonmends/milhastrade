@@ -153,7 +153,7 @@ async def main(phone):
         
     # ready_data.reverse() ##to reverse data extract order
 
-    with open('vercel_build_output/teste.json', 'w') as outfile:
+    with open('tmp/teste.json', 'w') as outfile:
         json.dump(ready_data, outfile, cls=DateTimeEncoder)
 
 with client:
