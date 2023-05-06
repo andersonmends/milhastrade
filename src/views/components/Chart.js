@@ -19,7 +19,7 @@ function Chart(props) {
 
     function filterData(days) {
 
-        const currentDate = new Date("2023-04-14");
+        const currentDate = new Date("2023-05-05");
         const filteredData = sortedData.filter((item) => {
             const date = new Date(item[props.dataXAxis]);
             const diffTime = Math.abs(currentDate - date);
