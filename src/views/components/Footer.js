@@ -25,7 +25,7 @@ function Footer () {
                                 </a>
                                 
                                 <a href="www.milhastrade.com.br" target="_blank">
-                                    <i className="fab fa-Instagram pr-3 text-white" />
+                                    <i className="fab fa-instagram pr-3 text-white" />
 
                                 </a>
                             </div>
