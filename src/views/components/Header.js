@@ -12,21 +12,22 @@ function Header() {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
 
-                            <Nav.Link href="/Cartoes">Cartões</Nav.Link>
-                            <Nav.Link href="/Programas">Programas</Nav.Link>
+                            <Nav.Link href="/cartoes">Cartões</Nav.Link>
+                            <Nav.Link href="/programas">Programas</Nav.Link>
+                            <Nav.Link href="/tutoriais">Tutoriais</Nav.Link>
                             <Nav.Link href="/about">About</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
 
                 </Container>
             </Navbar>
-            <Navbar className='justify-content-center text-center mb-1'>
+            {/* <Navbar className='justify-content-center text-center mb-1'>
                 <Card.Text style={{ fontSize: '12px' }}> Acompanhe a cotação de milhas da Hotmilhas e Maxmilhas com gráfico
                     do histórico de preços,e com base nos dados decida o momento certo de comprar, vender milhas ou negociar no
                     particular
                 </Card.Text>
 
-            </Navbar>
+            </Navbar> */}
 
             
         </>

@@ -145,9 +145,11 @@ function Home() {
             <Card className="mt-2" >
               <Card.Body >
 
-                <Card.Title className="h-100">Hotmilhas</Card.Title>
+                <Card.Title className="h-100 " >
+                  <Link to="https://www.hotmilhas.com.br" className="text-decoration-none text-dark">Hotmilhas</Link>
+                  </Card.Title>
                 <Card.Subtitle className={`mt-1 mb-1  ${colorTaxHotmilhas}`}>
-                  R${hmData[0][nameCiaHotmilhas].toPrecision(4)} <i class={arrowTaxHotmilhas}></i> {taxHotmilhas}%
+                  R${hmData[0][nameCiaHotmilhas].toPrecision(4)} <i className={arrowTaxHotmilhas}></i> {taxHotmilhas}%
                 </Card.Subtitle>
                 <Button
                   size="sm"
@@ -204,7 +206,7 @@ function Home() {
                 </ButtonCia>
 
               </Card.Body>
-              <Card.Text style={{ fontSize: '10px' }}>Atualizado em: {format(new Date(hmData[0].date), "Pp")}  </Card.Text>
+              <Card.Text style={{ fontSize: '10px' }}>Atualizado em: {format(new Date(hmData[0].date), "dd/MM/yyyy p")}  </Card.Text>
 
 
             </Card>
@@ -215,9 +217,11 @@ function Home() {
           <Col>
             <Card className="mt-2">
               <Card.Body >
-                <Card.Title className="h-100">Maxmilhas</Card.Title>
+                <Card.Title className="h-100" >
+                  <Link to="https://www.maxmilhas.com.br" className="text-decoration-none text-dark">Maxmilhas</Link>
+                </Card.Title>
                 <Card.Subtitle className={`mt-1 mb-1  ${colorTaxMaxmilhas}`}>
-                  R${maxData[0][nameCiaMaxmilhas].toPrecision(4)} <i class={arrowTaxMaxmilhas}></i> {taxMaxmilhas}%
+                  R${maxData[0][nameCiaMaxmilhas].toPrecision(4)} <i className={arrowTaxMaxmilhas}></i> {taxMaxmilhas}%
                 </Card.Subtitle>
                 <Button
                   size="sm"
@@ -274,7 +278,7 @@ function Home() {
 
                 </ButtonCia>
               </Card.Body>
-              <Card.Text style={{ fontSize: '10px' }}>Atualizado em: {format(new Date(maxData[0].date), "Pp")}  </Card.Text>
+              <Card.Text style={{ fontSize: '10px' }}>Atualizado em: {format(new Date(maxData[0].date), "dd / MM / yyyy p")}  </Card.Text>
 
             </Card>
           </Col>
@@ -291,16 +295,16 @@ function Home() {
           {newsData.map((news, index) => (
             <React.Fragment key={index}>
               <Col>
-                <NavLink to="/about" className="text-decoration-none">
-                  <Card key={index} className="mt-3 cardTest">
+                <Link to={`/news/${index}`} state={news} className="text-decoration-none">
+                  <Card key={index} className="mt-3 cardHover">
                     <Card.Img variant="top" src={news.Image} />
                     <Card.Body>
                       <Card.Title className="text-decoration-none text-dark">{news.title}</Card.Title>
                     </Card.Body>
                   </Card>
-                </NavLink>
+                </Link>
               </Col>
-              {index === 1 ? <NativeBanner /> : null}
+              {/* {index === 1 ? <NativeBanner /> : null} */}
             </React.Fragment>
           ))}
         </Row>

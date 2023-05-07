@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Home from './views/pages/Home';
 import Header from './views/components/Header';
 import Footer from './views/components/Footer';
@@ -18,7 +18,7 @@ function App() {
           <Route path="/about" element={<About/>} />
           <Route path="/cartoes" element={<Cartoes/>} />
           <Route path="/programas" element={<Programas/>} />
-          <Route path="/news" element={<NewsPage/>}></Route>
+          <Route path="/news/:id" element={<NewsPage/>}></Route>
         </Routes>
       </BrowserRouter>
       <Footer></Footer>

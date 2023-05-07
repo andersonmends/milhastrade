@@ -13,7 +13,7 @@ function Chart(props) {
     useEffect(() => {
         filterData(props.days);
         setDataYAxis(props.dataYAxis);
-        console.log(props.dataYAxis);
+        // console.log(props.dataYAxis);
         setColor(props.color);
     }, [props.days, props.dataYAxis]);
 
