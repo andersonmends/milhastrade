@@ -3,7 +3,6 @@ import tudoAzulLogo from "../../assets/images/tudoazul-logo.webp"
 import smilesLogo from "../../assets/images/smiles-logo.webp"
 import latampassLogo from "../../assets/images/latampass-logo.webp"
 import { Row, Col, Container, Card, Button } from 'react-bootstrap';
-import { FaChevronRight } from 'react-icons/fa';
 import { hmData, maxData } from "../../assets/data";
 import Chart from '../components/Chart';
 import ButtonCia from '../components/ButtonCia';
@@ -36,19 +35,23 @@ function Home() {
   const newsData = [
     {
       title: 'C6 Bank vai lançar dois novos segmentos e um cartão de crédito',
-      Image: 'https://www.melhoresdestinos.com.br/wp-content/uploads/2019/09/c6-bank-capa2019-01.jpg'
+      Image: 'https://www.melhoresdestinos.com.br/wp-content/uploads/2019/09/c6-bank-capa2019-01.jpg',
+      content: '<p>O<a href="www.c6bank.com.br" classname="text-dark text-decoration"><strong> C6 Bank </strong><a>vai investir pesado para conseguir aumentar a base de clientes, principalmente de<strong> alta renda</strong>. O banco digital, que começou oferecendo uma conta gratuita, está se aprimorando. Atualmente, já existe o <strong>Carbon Partner</strong>, que é o segmento de alta renda, mas serão lançados dois novos:</p><br><ul><li><strong>Segmento intermediário</strong> (média renda), sem nome definido, abaixo do <strong>Carbon Partner</strong>. Será como uma espécie de <strong>Itaú Uniclass, Bradesco Exclusive e Santander Van Gogh</strong>. Alguns clientes já estão enquadrados nele;</li><br><li><strong>Grafeno</strong> (high), que será um segmento superior ao <strong>Carbon Partner</strong>, e se assemelha ao <strong>Private Bank</strong> dos outros bancos.</li></ul><br><p>Sobre os cartões de crédito, ainda não há informações oficiais, mas o banco pretende lançar um superior ao <strong>C6 Carbon Mastercard Black</strong>. A ideia é colocar no mercado um cartão capaz de concorrer com o <strong>BRB DUX Visa Infinite e ao Bradesco Aeternum Visa Infinite</strong>.</p><br><p>Até o momento, o mercado só tem um cartão diferenciado na bandeira Mastercard, que é o <strong>Itaú The One Mastercard Black</strong>. Espera-se que o cartão do C6 Bank seja similar, com pontuação mais alta e acessos ilimitados às salas VIP.</p><br><small>fonte: <a href="www.cartoesdecredito.me">www.cartoesdecredito.me</a></small>'
     },
     {
       title: 'Esfera inicia parceria com a Decolar e oferece até 4 pontos por real gasto',
-      Image: 'https://passageirodeprimeira.com/wp-content/uploads/2023/04/by-98-472x265.png'
+      Image: 'https://passageirodeprimeira.com/wp-content/uploads/2023/04/by-98-472x265.png',
+      content: ''
     },
     {
       title: 'Os 32 melhores cartões de crédito sem anuidade de 2023',
-      Image: 'https://www.melhoresdestinos.com.br/wp-content/uploads/2020/08/cartoes-de-credito-sem-anuidade-capa2019.jpg'
+      Image: 'https://www.melhoresdestinos.com.br/wp-content/uploads/2020/08/cartoes-de-credito-sem-anuidade-capa2019.jpg',
+      content: ''
     },
     {
       title: 'Feirão GOL tem passagens aéreas nacionais a partir de R$ 228 ida e volta',
-      Image: 'https://www.melhoresdestinos.com.br/wp-content/uploads/2023/01/megapromo-feirao-passagens-aereas-rio-de-janeiro-capa-2023.jpg'
+      Image: 'https://www.melhoresdestinos.com.br/wp-content/uploads/2023/01/megapromo-feirao-passagens-aereas-rio-de-janeiro-capa-2023.jpg',
+      content: ''
     },
   ];
 
@@ -147,7 +150,7 @@ function Home() {
 
                 <Card.Title className="h-100 " >
                   <Link to="https://www.hotmilhas.com.br" className="text-decoration-none text-dark">Hotmilhas</Link>
-                  </Card.Title>
+                </Card.Title>
                 <Card.Subtitle className={`mt-1 mb-1  ${colorTaxHotmilhas}`}>
                   R${hmData[0][nameCiaHotmilhas].toPrecision(4)} <i className={arrowTaxHotmilhas}></i> {taxHotmilhas}%
                 </Card.Subtitle>
