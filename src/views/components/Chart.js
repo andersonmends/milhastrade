@@ -8,6 +8,7 @@ function Chart(props) {
     const [ticket, setTicket] = useState(15);
     const [dataYAxis, setDataYAxis] = useState(props.dataYAxis);
     const [color, setColor] = useState(props.color);
+    console.log(props.data[0].date);
 
 
     useEffect(() => {
@@ -19,7 +20,8 @@ function Chart(props) {
 
     function filterData(days) {
 
-        const currentDate = new Date("2023-05-05");
+        // define data currente for grapich ticket show
+        const currentDate = new Date(props.data[0].date);
         const filteredData = sortedData.filter((item) => {
             const date = new Date(item[props.dataXAxis]);
             const diffTime = Math.abs(currentDate - date);

@@ -40,16 +40,16 @@ config = configparser.ConfigParser()
 config.read("config.ini")
 
 # Setting configuration values
-api_id = os.environ.get('api_id') #config['Telegram']['api_id']
-api_hash = os.environ.get('api_hash') 
+api_id = config['Telegram']['api_id'] #os.environ.get('api_id') 
+api_hash = config['Telegram']['api_hash'] #os.environ.get('api_hash') 
 
 api_hash = str(api_hash)
 
-phone = os.environ.get('phone')
-username = os.environ.get('username')
-url = os.environ.get('channel_url')
+phone = config['Telegram']['phone'] #os.environ.get('phone')
+username = config['Telegram']['username'] #os.environ.get('username')
+url = config['Telegram']['url'] #os.environ.get('channel_url')
 
-session_string = os.environ.get('session_string')
+session_string = config['Telegram']['session_string'] #os.environ.get('session_string')
 # Create the client and connect
 client = TelegramClient(StringSession(session_string), api_id, api_hash)
 
@@ -77,7 +77,7 @@ async def main(phone):
     my_channel = await client.get_entity(entity)
 
     # replace with your desired date, for all messages set data before telegram channel
-    start_date = datetime(2023, 3, 25, 0, 0)  
+    start_date = datetime(2020, 3, 25, 0, 0)  
     
 
     offset_id = 0
@@ -153,7 +153,7 @@ async def main(phone):
         
     # ready_data.reverse() ##to reverse data extract order
 
-    with open('tmp/teste.json', 'w') as outfile:
+    with open('../src/assets/channel-messages.json', 'w') as outfile:
         json.dump(ready_data, outfile, cls=DateTimeEncoder)
 
 with client:
