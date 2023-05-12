@@ -8,6 +8,7 @@ import Programas from "./views/pages/Programas"
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { NewsPage } from './views/pages/NewsPage';
 import { ScrollToTop } from './views/components/ScrollToTop';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       </BrowserRouter>
       
       <Footer></Footer>
+      <Analytics />
     </>
   )
 
