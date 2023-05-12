@@ -7,12 +7,15 @@ import Cartoes from "./views/pages/Cartoes"
 import Programas from "./views/pages/Programas"
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { NewsPage } from './views/pages/NewsPage';
+import { ScrollToTop } from './views/components/ScrollToTop';
 
 function App() {
   return (
     <>
       <Header />
+     
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route exact path="/" element={<Home/>} />
           <Route path="/about" element={<About/>} />
@@ -21,6 +24,7 @@ function App() {
           <Route path="/news/:id" element={<NewsPage/>}></Route>
         </Routes>
       </BrowserRouter>
+      
       <Footer></Footer>
     </>
   )
