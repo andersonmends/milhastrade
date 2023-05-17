@@ -282,7 +282,7 @@ function Home() {
 
                 </ButtonCia>
               </Card.Body>
-              <Card.Text style={{ fontSize: '10px' }}>Atualizado em: {format(new Date(maxData[0].date), "dd / MM / yyyy p")}  </Card.Text>
+              <Card.Text style={{ fontSize: '10px' }}>Atualizado em: {format(new Date(maxData[0].date), "dd/MM/yyyy p")}  </Card.Text>
 
             </Card>
           </Col>
@@ -308,7 +308,7 @@ function Home() {
                   </Card>
                 </Link>
               </Col>
-              {/* {index === 1 ? <NativeBanner /> : null} */}
+              {index === 1 ? <NativeBanner /> : null}
             </React.Fragment>
           ))}
         </Row>
