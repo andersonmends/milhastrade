@@ -308,7 +308,10 @@ function Home() {
                   </Card>
                 </Link>
               </Col>
-              {/* {index === 1 ? <NativeBanner /> : null} */}
+
+            
+              {/*index === 1 ? <NativeBanner /> : null*/}
+
             </React.Fragment>
           ))}
         </Row>
