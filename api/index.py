@@ -77,7 +77,7 @@ async def main(phone):
     my_channel = await client.get_entity(entity)
 
     # replace with your desired date, for all messages set data before telegram channel
-    start_date = datetime(2023, 5, 12, 0, 0)  
+    start_date = datetime(2023, 5, 23, 0, 0)  
     
 
     offset_id = 0
