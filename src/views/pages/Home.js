@@ -11,6 +11,7 @@ import WayAwayWidget from "../components/WayAwayWidget";
 import { Banner468x60, Banner300x250, NativeBanner, SocialBar } from "../components/AdsterraWidget "
 import { format } from "date-fns";
 import { Link, NavLink } from 'react-router-dom';
+// import db from '../../db';
 
 function Home() {
 
@@ -57,6 +58,7 @@ function Home() {
   ];
 
   useEffect(() => {
+    // console.log(db.connect());
 
     getPercentHotmilhas();
     getPercentMaxmilhas();
