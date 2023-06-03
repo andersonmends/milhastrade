@@ -4,6 +4,7 @@ import smilesLogo from "../../assets/images/smiles-logo.webp"
 import latampassLogo from "../../assets/images/latampass-logo.webp"
 import { Row, Col, Container, Card, Button } from 'react-bootstrap';
 import { hmData, maxData } from "../../assets/data";
+// import { fetchData } from "../../assets/data";
 import Chart from '../components/Chart';
 import ButtonCia from '../components/ButtonCia';
 import SkyscannerSearchWidget from '../components/SkyscannerSearchWidget';
@@ -14,6 +15,10 @@ import { Link, NavLink } from 'react-router-dom';
 // import db from '../../db';
 
 function Home() {
+
+  // const {hmData, maxData} = props;
+  // const [hmData, setHmData] = useState(null);
+  // const [maxData, setMaxData] = useState(null);
 
   const fanBlueAzul = "#14649C"
   const monaLisaGol = "#FCA292"
@@ -59,6 +64,26 @@ function Home() {
 
   useEffect(() => {
     // console.log(db.connect());
+    // fetchData("HM")
+    //   .then(result => {
+    //     setHmData(result);
+    //     console.log(result);
+    //   })
+    //   .catch(error => {
+    //     // Trate o erro, se necessário
+    //     console.error(error);
+    //   });
+
+
+    //  fetchData("Max")
+    //   .then(result => {
+    //     setMaxData(result);
+    //     // console.log(result);
+    //   })
+    //   .catch(error => {
+    //     // Trate o erro, se necessário
+    //     console.error(error);
+    //   });
 
     getPercentHotmilhas();
     getPercentMaxmilhas();

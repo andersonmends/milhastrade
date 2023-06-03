@@ -8,7 +8,7 @@ function Chart(props) {
     const [ticket, setTicket] = useState(15);
     const [dataYAxis, setDataYAxis] = useState(props.dataYAxis);
     const [color, setColor] = useState(props.color);
-    console.log(props.data[0].date);
+    // console.log(props.data[0].date);
 
 
     useEffect(() => {
