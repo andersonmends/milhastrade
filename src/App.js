@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Home from './views/pages/Home';
 import Header from './views/components/Header';
 import Footer from './views/components/Footer';
@@ -9,12 +9,17 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { NewsPage } from './views/pages/NewsPage';
 import { ScrollToTop } from './views/components/ScrollToTop';
 import { Analytics } from '@vercel/analytics/react';
+import * as Realm from "realm-web";
+// import { hmData, maxData } from "./assets/data";
+
 
 function App() {
+    
   return (
     <>
       <Header />
-     
+
+
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
@@ -25,7 +30,7 @@ function App() {
           <Route path="/news/:id" element={<NewsPage/>}></Route>
         </Routes>
       </BrowserRouter>
-      
+
       <Footer></Footer>
       <Analytics />
     </>
