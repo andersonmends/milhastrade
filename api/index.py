@@ -11,7 +11,7 @@ from telethon.tl.functions.messages import GetHistoryRequest
 from telethon.tl.types import PeerChannel
 from telethon.sessions import StringSession
 from os.path import join
-from http.server import BaseHTTPRequestHandler
+from urllib.parse import quote
 
 
 # some functions to parse json date
@@ -25,36 +25,28 @@ class DateTimeEncoder(json.JSONEncoder):
 
         return json.JSONEncoder.default(self, o)
 
-# class handler(BaseHTTPRequestHandler):
- 
-#     def do_GET(self):
-#         self.send_response(200)
-#         self.send_header('Content-type','text/plain')
-#         self.end_headers()
-#         self.wfile.write('Hello, world!'.encode('utf-8'))
-#         return
 
 # Reading Configs
 config = configparser.ConfigParser()
 config.read("config.ini")
 
 # Setting configuration values
-# api_id = config['Telegram']['api_id'] #os.environ.get('api_id') 
-api_id =  os.environ.get('api_id') 
-# api_hash = config['Telegram']['api_hash'] #os.environ.get('api_hash') 
-api_hash = os.environ.get('api_hash') 
+api_id = config['Telegram']['api_id'] 
+# api_id =  os.environ.get('api_id') 
+api_hash = config['Telegram']['api_hash'] 
+# api_hash = os.environ.get('api_hash') 
 
 api_hash = str(api_hash)
 
-# phone = config['Telegram']['phone'] #os.environ.get('phone')
-phone = os.environ.get('phone')
-# username = config['Telegram']['username'] 
-username = os.environ.get('username')
-# url = config['Telegram']['url'] 
-url = os.environ.get('channel_url')
+phone = config['Telegram']['phone'] 
+# phone = os.environ.get('phone')
+username = config['Telegram']['username'] 
+# username = os.environ.get('username')
+url = config['Telegram']['url'] 
+# url = os.environ.get('channel_url')
 
-# session_string = config['Telegram']['session_string'] 
-session_string = os.environ.get('session_string')
+session_string = config['Telegram']['session_string'] 
+# session_string = os.environ.get('session_string')
 # Create the client and connect
 client = TelegramClient(StringSession(session_string), api_id, api_hash)
 
@@ -79,11 +71,14 @@ async def main(phone):
     else:
         entity = user_input_channel
 
-    my_channel = await client.get_entity(entity)
+    
+    print("ID do Grupo:", entity)
+
+    my_channel = await client.get_input_entity(entity)
 
     # replace with your desired date, for all messages set data before telegram channel
-    # start_date = datetime(2023, 5, 23, 0, 0)  
-    start_date = datetime.now() 
+    start_date = datetime(2023, 6, 2, 0, 0)  
+    # start_date = datetime.now() 
     print(start_date)
     
 
