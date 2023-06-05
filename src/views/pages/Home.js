@@ -174,7 +174,7 @@ function Home() {
         <Row >
           <Col>
             <Card className="mt-2" >
-              <Card.Body >
+              <Card.Body className="pb-3" >
 
                 <Card.Title className="h-100 " >
                   <Link to="https://www.hotmilhas.com.br" className="text-decoration-none text-dark">Hotmilhas</Link>
@@ -184,7 +184,7 @@ function Home() {
                 </Card.Subtitle>
                 <Button
                   size="sm"
-                  style={{ outline: daysHotmilhas === 7 ? "1px solid #ddd  " : "none", margin: "0px 5px 0px 20px" }}
+                  style={{ outline: daysHotmilhas === 7 ? "1px solid #ddd  " : "none", margin: "0px 5px 0px 60px" }}
                   variant="outline-secondary" onClick={() => setDaysHotmilhas(7)}>
                   7D
                 </Button>
@@ -237,7 +237,8 @@ function Home() {
                 </ButtonCia>
 
               </Card.Body>
-              <Card.Text style={{ fontSize: '10px' }}>Atualizado em: {format(new Date(hmData[0].date), "dd/MM/yyyy p")}  </Card.Text>
+              <Card.Text className='mb-0' style={{ fontSize: '10px' }}>*Atualizado em: {format(new Date(hmData[0].date), "dd/MM/yyyy p")}  </Card.Text>
+              <Card.Text className='mb-1' style={{ fontSize: '10px' }}>**A cotação leva em consideração o maior valor possível de venda  </Card.Text>
 
 
             </Card>
@@ -247,7 +248,7 @@ function Home() {
 
           <Col>
             <Card className="mt-2">
-              <Card.Body >
+              <Card.Body className="pb-3" >
                 <Card.Title className="h-100" >
                   <Link to="https://www.maxmilhas.com.br" className="text-decoration-none text-dark">Maxmilhas</Link>
                 </Card.Title>
@@ -256,7 +257,7 @@ function Home() {
                 </Card.Subtitle>
                 <Button
                   size="sm"
-                  style={{ outline: daysMaxmilhas === 7 ? "1px solid #ddd" : "none", margin: "0px 5px 0px 20px" }}
+                  style={{ outline: daysMaxmilhas === 7 ? "1px solid #ddd" : "none", margin: "0px 5px 0px 60px" }}
                   variant="outline-secondary" onClick={() => setDaysMaxmilhas(7)}>
                   7D
                 </Button>
@@ -309,7 +310,8 @@ function Home() {
 
                 </ButtonCia>
               </Card.Body>
-              <Card.Text style={{ fontSize: '10px' }}>Atualizado em: {format(new Date(maxData[0].date), "dd/MM/yyyy p")}  </Card.Text>
+              <Card.Text className='mb-0' style={{ fontSize: '10px' }}>*Atualizado em: {format(new Date(hmData[0].date), "dd/MM/yyyy p")}  </Card.Text>
+              <Card.Text className='mb-1' style={{ fontSize: '10px' }}>**A cotação leva em consideração o maior valor possível de venda  </Card.Text>
 
             </Card>
           </Col>
