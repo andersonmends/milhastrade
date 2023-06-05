@@ -59,7 +59,7 @@ function Chart(props) {
                 height={250}
                 data={data}
                 fontSize={12}
-                margin={{ top: 15, right: 0, left: -0, bottom: 5 }}
+                margin={{ top: 15, right: 30, left: -0, bottom: 5 }}
             >
                 <defs>
                     <linearGradient id={color} x1="0" y1="0" x2="0" y2="1">
@@ -71,8 +71,9 @@ function Chart(props) {
                     tickLine={{ transform: 'translate(100, 0)' }}
                     tick={{ dx: 100 }}
                     dataKey={props.dataXAxis}
+                    
                     tickFormatter={(value) => format(new Date(value), "dd MMM")}
-                    interval={Math.round(data.length / 2) - 1}
+                    interval={Math.round(data.length / 2.3) - 1}
 
 
                 />

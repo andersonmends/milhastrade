@@ -184,7 +184,7 @@ function Home() {
                 </Card.Subtitle>
                 <Button
                   size="sm"
-                  style={{ outline: daysHotmilhas === 7 ? "1px solid #ddd  " : "none", margin: "0px 5px 0px 60px" }}
+                  style={{ outline: daysHotmilhas === 7 ? "1px solid #ddd  " : "none", margin: "0px 5px 0px 20px" }}
                   variant="outline-secondary" onClick={() => setDaysHotmilhas(7)}>
                   7D
                 </Button>
@@ -257,7 +257,7 @@ function Home() {
                 </Card.Subtitle>
                 <Button
                   size="sm"
-                  style={{ outline: daysMaxmilhas === 7 ? "1px solid #ddd" : "none", margin: "0px 5px 0px 60px" }}
+                  style={{ outline: daysMaxmilhas === 7 ? "1px solid #ddd" : "none", margin: "0px 5px 0px 20px" }}
                   variant="outline-secondary" onClick={() => setDaysMaxmilhas(7)}>
                   7D
                 </Button>
