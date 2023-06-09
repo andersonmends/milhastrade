@@ -12,13 +12,8 @@ import WayAwayWidget from "../components/WayAwayWidget";
 import { Banner468x60, Banner300x250, NativeBanner, SocialBar } from "../components/AdsterraWidget "
 import { format } from "date-fns";
 import { Link, NavLink } from 'react-router-dom';
-// import db from '../../db';
 
 function Home() {
-
-  // const {hmData, maxData} = props;
-  // const [hmData, setHmData] = useState(null);
-  // const [maxData, setMaxData] = useState(null);
 
   const fanBlueAzul = "#14649C"
   const monaLisaGol = "#FCA292"
@@ -63,27 +58,6 @@ function Home() {
   ];
 
   useEffect(() => {
-    // console.log(db.connect());
-    // fetchData("HM")
-    //   .then(result => {
-    //     setHmData(result);
-    //     console.log(result);
-    //   })
-    //   .catch(error => {
-    //     // Trate o erro, se necessário
-    //     console.error(error);
-    //   });
-
-
-    //  fetchData("Max")
-    //   .then(result => {
-    //     setMaxData(result);
-    //     // console.log(result);
-    //   })
-    //   .catch(error => {
-    //     // Trate o erro, se necessário
-    //     console.error(error);
-    //   });
 
     getPercentHotmilhas();
     getPercentMaxmilhas();
@@ -100,22 +74,22 @@ function Home() {
 
       setColorTaxHotmilhas("text-success")
       setArrowTaxHotmilhas("fa fa-long-arrow-up")
-      setTaxHotmilhas(percent.toPrecision(3))
+      setTaxHotmilhas(percent.toFixed(2))
 
     };
     if (percent < 0) {
       setColorTaxHotmilhas("text-danger")
       setArrowTaxHotmilhas("fa fa-long-arrow-down")
-      setTaxHotmilhas(percent.toPrecision(3))
-      const tempPercent = percent * (-1);
-      setTaxHotmilhas(tempPercent.toPrecision(3))
+      setTaxHotmilhas(percent.toFixed(2))
+      // const tempPercent = percent * (-1);
+      setTaxHotmilhas(percent.toFixed(2))
 
     };
 
     if (percent === 0) {
       setColorTaxHotmilhas("")
       setArrowTaxHotmilhas("fa fa-minus")
-      setTaxHotmilhas(percent.toPrecision(3))
+      setTaxHotmilhas(percent.toFixed(2))
 
     }
 
@@ -132,14 +106,14 @@ function Home() {
 
       setColorTaxMaxmilhas("text-success")
       setArrowTaxMaxmilhas("fa fa-long-arrow-up")
-      setTaxMaxmilhas(percent.toPrecision(3))
+      setTaxMaxmilhas(percent.toFixed(2))
     };
     if (percent < 0) {
       setColorTaxMaxmilhas("text-danger")
       setArrowTaxMaxmilhas("fa fa-long-arrow-down")
-      setTaxMaxmilhas(percent.toPrecision(3))
-      const tempPercent = percent * (-1);
-      setTaxMaxmilhas(tempPercent.toPrecision(3))
+      setTaxMaxmilhas(percent.toFixed(2))
+      // const tempPercent = percent * (-1);
+      setTaxMaxmilhas(percent.toFixed(2))
 
     };
 
