@@ -148,7 +148,7 @@ function Home() {
         <Row >
           <Col>
             <Card className="mt-2" >
-              <Card.Body className="pb-3" >
+              <Card.Body  >
 
                 <Card.Title className="h-100 " >
                   <Link to="https://www.hotmilhas.com.br" className="text-decoration-none text-dark">Hotmilhas</Link>
@@ -211,18 +211,17 @@ function Home() {
                 </ButtonCia>
 
               </Card.Body>
-              <Card.Text className='mb-0' style={{ fontSize: '10px' }}>*Atualizado em: {format(new Date(hmData[0].date), "dd/MM/yyyy p")}  </Card.Text>
-              <Card.Text className='mb-1' style={{ fontSize: '10px' }}>**A cotação leva em consideração o maior valor possível de venda  </Card.Text>
+              
 
 
             </Card>
           </Col>
-
+          
 
 
           <Col>
             <Card className="mt-2">
-              <Card.Body className="pb-3" >
+              <Card.Body  >
                 <Card.Title className="h-100" >
                   <Link to="https://www.maxmilhas.com.br" className="text-decoration-none text-dark">Maxmilhas</Link>
                 </Card.Title>
@@ -284,14 +283,13 @@ function Home() {
 
                 </ButtonCia>
               </Card.Body>
-              <Card.Text className='mb-0' style={{ fontSize: '10px' }}>*Atualizado em: {format(new Date(hmData[0].date), "dd/MM/yyyy p")}  </Card.Text>
-              <Card.Text className='mb-1' style={{ fontSize: '10px' }}>**A cotação leva em consideração o maior valor possível de venda  </Card.Text>
 
             </Card>
           </Col>
 
         </Row>
-
+        <Card.Text className='mb-0 mt-2' style={{ fontSize: '10px' }}>*Atualizado em: {format(new Date(hmData[0].date), "dd/MM/yyyy p")}  </Card.Text>
+        <Card.Text className='mb-1' style={{ fontSize: '10px' }}>**A cotação na Hotmilhas leva em consideração o valor pago em 90 dias  </Card.Text>
 
 
 
