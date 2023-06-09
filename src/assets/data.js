@@ -16,7 +16,7 @@ let maxData="";
 let authToken = ""
 const authTokenRefresh = process.env.REACT_APP_AUTH_TOKEN_REFRESH
 
-console.log(process.env.REACT_APP_AUTH_TOKEN_REFRESH);
+//console.log(process.env.REACT_APP_AUTH_TOKEN_REFRESH);
 
 // await axios.post('https://sa-east-1.aws.realm.mongodb.com/api/client/v2.0/app/data-oxpgb/auth/providers/anon-user/login', {}, {
     
@@ -42,12 +42,11 @@ await axios.post('https://sa-east-1.aws.realm.mongodb.com/api/client/v2.0/auth/s
     .then(response => {
         // A resposta já está em formato JSON
         authToken = response.data.access_token;
-        // Aqui você pode acessar os dados retornados
-        // console.log(authToken);
+       
     })
     .catch(error => {
         // Trate o erro, se necessário
-        console.error(error);
+//        console.error(error);
     });
 
 
