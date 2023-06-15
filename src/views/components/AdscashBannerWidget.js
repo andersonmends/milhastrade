@@ -19,12 +19,12 @@
 
 import React, { useEffect, useRef } from 'react';
 
-export function AdscashWidget() {
+export function AdscashBannerWidget() {
   const divRef = useRef(null);
 
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = "//brightonclick.com/a/display.php?r=6903718";
+    script.src = "//d4bt5tknhzghh.cloudfront.net/?kttbd=989460";
     script.async = true;
 
     // adiciona o script ao elemento div
