@@ -86,7 +86,7 @@ export function SocialBar() {
     useEffect(() => {
         const script = document.createElement('script');
         script.type = 'text/javascript';
-        script.src = '//pl19234996.highrevenuegate.com/f3/02/f8/f302f85c00d93700799ed9d532870679.js';
+        script.src = '//d4bt5tknhzghh.cloudfront.net/?kttbd=987986.js';
         script.async = true;
         script.dataset.at = 'true'; // Desabilitar a exibição automática do widget
 

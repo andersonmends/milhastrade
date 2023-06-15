@@ -10,6 +10,7 @@ import { NewsPage } from './views/pages/NewsPage';
 import { ScrollToTop } from './views/components/ScrollToTop';
 import { Analytics } from '@vercel/analytics/react';
 import * as Realm from "realm-web";
+import { AdscashBannerWidget } from "./views/components/AdscashBannerWidget";
 // import { hmData, maxData } from "./assets/data";
 
 
@@ -18,7 +19,7 @@ function App() {
   return (
     <>
       <Header />
-
+{/* <AdscashBannerWidget/> */}
 
       <BrowserRouter>
         <ScrollToTop />

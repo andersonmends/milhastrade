@@ -4,12 +4,8 @@ import smilesLogo from "../../assets/images/smiles-logo.webp"
 import latampassLogo from "../../assets/images/latampass-logo.webp"
 import { Row, Col, Container, Card, Button } from 'react-bootstrap';
 import { hmData, maxData } from "../../assets/data";
-// import { fetchData } from "../../assets/data";
 import Chart from '../components/Chart';
 import ButtonCia from '../components/ButtonCia';
-import SkyscannerSearchWidget from '../components/SkyscannerSearchWidget';
-import WayAwayWidget from "../components/WayAwayWidget";
-import { Banner468x60, Banner300x250, NativeBanner, SocialBar } from "../components/AdsterraWidget "
 import { format } from "date-fns";
 import { Link, NavLink } from 'react-router-dom';
 
@@ -145,10 +141,12 @@ function Home() {
     <>
 
       <Container className="justify-content-md-center text-center" >
+
         <Row >
           <Col>
             <Card className="mt-2" >
-              <Card.Body className="pb-3" >
+              <Card.Body  >
+
 
                 <Card.Title className="h-100 " >
                   <Link to="https://www.hotmilhas.com.br" className="text-decoration-none text-dark">Hotmilhas</Link>
@@ -211,8 +209,7 @@ function Home() {
                 </ButtonCia>
 
               </Card.Body>
-              <Card.Text className='mb-0' style={{ fontSize: '10px' }}>*Atualizado em: {format(new Date(hmData[0].date), "dd/MM/yyyy p")}  </Card.Text>
-              <Card.Text className='mb-1' style={{ fontSize: '10px' }}>**A cotação leva em consideração o maior valor possível de venda  </Card.Text>
+
 
 
             </Card>
@@ -222,7 +219,7 @@ function Home() {
 
           <Col>
             <Card className="mt-2">
-              <Card.Body className="pb-3" >
+              <Card.Body  >
                 <Card.Title className="h-100" >
                   <Link to="https://www.maxmilhas.com.br" className="text-decoration-none text-dark">Maxmilhas</Link>
                 </Card.Title>
@@ -284,20 +281,16 @@ function Home() {
 
                 </ButtonCia>
               </Card.Body>
-              <Card.Text className='mb-0' style={{ fontSize: '10px' }}>*Atualizado em: {format(new Date(hmData[0].date), "dd/MM/yyyy p")}  </Card.Text>
-              <Card.Text className='mb-1' style={{ fontSize: '10px' }}>**A cotação leva em consideração o maior valor possível de venda  </Card.Text>
 
             </Card>
           </Col>
 
         </Row>
-
-
+        <Card.Text className='mb-0 mt-2' style={{ fontSize: '10px' }}>*Atualizado em: {format(new Date(hmData[0].date), "dd/MM/yyyy p")}  </Card.Text>
+        <Card.Text className='mb-1' style={{ fontSize: '10px' }}>**A cotação na Hotmilhas leva em consideração o valor pago em 90 dias  </Card.Text>
 
 
         <h2 className="mt-2" id="noticias">Notícias</h2>
-
-
         <Row xs={1} md={2} lg={4} className="g-4">
           {newsData.map((news, index) => (
             <React.Fragment key={index}>
@@ -311,18 +304,38 @@ function Home() {
                   </Card>
                 </Link>
               </Col>
-
-            
-              {/*index === 1 ? <NativeBanner /> : null*/}
-
             </React.Fragment>
           ))}
         </Row>
 
 
+        <h2 className="mt-2" id="noticias">Cursos</h2>
+        <Row xs={1} md={2} lg={4} className="g-4" >
+          <Col>
+            <Link to={`https://go.hotmart.com/B83871310R`} className="text-decoration-none">
+              <Card className="mt-3 cardHover">
+                <Card.Img variant="top" src="https://hotmart.s3.amazonaws.com/product_pictures/e699b849-96db-4fb6-8909-eabc3818ffb0/cadastro.png" />
+                <Card.Body>
+                  <Card.Title className="text-decoration-none text-dark">Comunidade Papop do Holder</Card.Title>
+                </Card.Body>
+              </Card>
+            </Link>
+          </Col>
+          <Col>
+            <Link to={`https://go.hotmart.com/B83873339R`} className="text-decoration-none">
+              <Card className="mt-3 cardHover">
+                <Card.Img variant="top" src="https://static-media.hotmart.com/lmDIYmR1xP6tDNYg9qRwexYExaA=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/e3683c50-e410-40c4-8a1f-9fc8dbc18ad8/Amaneiramaissimplesepraticadeentenderomundodasmilhas.png?w=920" />
+                <Card.Body>
+                  <Card.Title className="text-decoration-none text-dark">Ebook - Fast Milhas</Card.Title>
+                </Card.Body>
+              </Card>
+            </Link>
+          </Col>
+        </Row>
+     
+
 
       </Container>
-
 
     </>
   );
