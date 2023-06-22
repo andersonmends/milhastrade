@@ -11,11 +11,24 @@ import { ScrollToTop } from './views/components/ScrollToTop';
 import { Analytics } from '@vercel/analytics/react';
 import Parser from 'rss-parser/dist/rss-parser';
 import cheerio from 'cheerio';
+import axios from 'axios';
 
 
 async function fetchRSSFeed() {
   const parser = new Parser();
+  // https://www.melhorescartoes.com.br/feed
+  // com axios consegui e cors consegui pegar as imagens de capa do melhores destinos
+
+  // https://www.nasa.gov/rss/dyn/breaking_news.rss
+
+  // https://pontospravoar.com/feed/
+  // no feed do proprio pontos para voar tem a foto de capa
+
+  // se der ruim com heroku proxy cors, tem formas de criar um proxy para fazer requisição ou pode ser que no 
+  // vercel funcione normal.
+
   const feed = await parser.parseURL('https://cors-anywhere.herokuapp.com/https://www.melhorescartoes.com.br/feed');
+  console.log(feed);
   return feed.items.map(item => ({
     ...item,
     content: item['content:encoded'] ? item['content:encoded'] : item.content,
@@ -36,14 +49,35 @@ function extractContentWithoutImages(content) {
   return doc.body.innerHTML;
 }
 
+async function extractCoverImageFromLink(link) {
+  try {
+    const response = await axios.get("https://cors-anywhere.herokuapp.com/"+link);
+    const html = response.data;
+    const $ = cheerio.load(html);
+    const metaImage = $('meta[property="og:image"]').attr('content');
+    return metaImage ? metaImage : null;
+  } catch (error) {
+    console.error('Error fetching link:', error);
+    return null;
+  }
+}
+
 function App() {
 
   const [rssItems, setRssItems] = useState([]);
+  
 
   useEffect(() => {
     async function fetchData() {
       const items = await fetchRSSFeed();
-      setRssItems(items);
+      const updatedItems = await Promise.all(items.map(async (item) => {
+        const coverImage = await extractCoverImageFromLink(item.link);
+        return {
+          ...item,
+          coverImage: coverImage,
+        };
+      }));
+      setRssItems(updatedItems);
     }
 
     fetchData();
@@ -54,6 +88,7 @@ function App() {
   return (
     <>
       <Header />
+      {/* <iframe align="center" width="1200" height="1600" src="https://rss.app/embed/v1/wall/bxoIBShZL3WPdmEl" frameborder="2"></iframe> */}
       <div>
         
         <ul>
@@ -64,14 +99,20 @@ function App() {
             return (
               <li key={index}>
                 <a href={item.link}>{item.title}</a>
-                {firstImage && <img src={firstImage} alt="First Image" />}
+                {/* {firstImage && <img src={firstImage} alt="First Image" />} */}
                 <p>{item.contentSnippet}</p>
-                <p dangerouslySetInnerHTML={{ __html: contentWithoutImages }}></p>
+                {item.coverImage && <img src={item.coverImage} alt="Cover Image" />}
+                {/* <p>{item.enclosure.url}</p> */}
+                {/* <img src={item.enclosure.url} alt="First Image" /> */}
+                
+                
+                {/* <p dangerouslySetInnerHTML={{ __html: contentWithoutImages }}></p> */}
               </li>
             );
           })}
         </ul>
       </div>
+      
 
 
       {/* <BrowserRouter>
