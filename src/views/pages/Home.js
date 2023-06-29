@@ -123,7 +123,7 @@ function Home() {
       <Container className="justify-content-md-center text-center" >
 
         <Typography variant="h5" component="h1" className='mt-2 mb-2 text-dark' sx={{ fontWeight: 450 }} >
-          Hotmilhas
+          Cotação
         </Typography>
 
         <Row >
