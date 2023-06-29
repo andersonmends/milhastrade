@@ -1,13 +1,14 @@
 import React from "react";
 import { useLocation } from "react-router";
-import { Container, Card, Row, Col } from 'react-bootstrap';
+import { Container, Card, Row, Col, } from 'react-bootstrap';
 import parse from 'html-react-parser';
 import { Link } from 'react-router-dom';
+
 
 export function NewsPage() {
 
   let { state } = useLocation();
-  // console.log(state);
+  console.log(state);
 
   return (
     <div>
@@ -19,10 +20,11 @@ export function NewsPage() {
             <Card className="mt-3 mb-3 cardTest text-justify" style={{ maxWidth: 900 }}>
 
               <Card.Body >
-                <Card.Img variant="top" src={state.Image} />
-                <Card.Title as="h2" className="mt-5 text-center">{state.title}</Card.Title>
-                {parse(state.content)}
-
+                <Card.Img variant="top" src={state.coverImage} />
+                <Card.Title as="h2" className="mt-5 text-center">{state.title}</Card.Title>               
+                <Card.Text className="mt-4 pl-4 pr-4">{parse(state.content)}</Card.Text>
+                
+                <Link to={state.link}> <Card.Text className="mt-4 pl-4 pr-4">Clique aqui para a matéria completa </Card.Text></Link>
               </Card.Body>
             </Card>
 

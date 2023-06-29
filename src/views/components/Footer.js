@@ -4,7 +4,7 @@ import { Row, Col, Container, Card} from 'react-bootstrap';
 function Footer () {
    
         return (
-            <Card.Footer className="text-white bg-primary">
+            <Card.Footer className="text-white bg-primary mt-4">
                 <Container>
 
                     <Row>
