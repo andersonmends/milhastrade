@@ -95,45 +95,50 @@ function News() {
   return (
     <>
 
-      <Slider 
-        dots={true} // Adiciona pontos indicadores abaixo do carrossel
-        infinite={true} // Permite que o carrossel seja percorrido infinitamente
-        slidesToShow={4} // Número de itens visíveis ao mesmo tempo
-        slidesToScroll={4} // Número de itens a serem percorridos ao clicar nas setas de navegação
-        autoplay={true} // Reproduz o carrossel automaticamente
-        autoplaySpeed={4000} // Intervalo de tempo entre as transições dos slides (em milissegundos)
+      <Slider
+        dots={true}
+        infinite={true}
+        slidesToShow={4}
+        slidesToScroll={4}
+        autoplay={true}
+        autoplaySpeed={4000}
         responsive={[
           {
-            breakpoint: 992, // Tamanho médio de tela (md)
+            breakpoint: 992,
             settings: {
-              slidesToShow: 2, // Número de itens visíveis ao mesmo tempo em telas médias
-              slidesToScroll: 2 // Número de itens a serem percorridos em telas médias2
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              // vertical: true, // Adiciona o carrossel na vertical
+              // verticalSwiping: true // Permite navegar na vertical arrastando o carrossel
             }
           },
           {
-            breakpoint: 768, // Tamanho pequeno de tela (sm)
+            breakpoint: 768,
             settings: {
-              slidesToShow: 1, // Número de itens visíveis ao mesmo tempo em telas pequenas
-              slidesToScroll: 1 // Número de itens a serem percorridos em telas pequenas
+              slidesToShow: 4,
+              slidesToScroll: 1,
+              infinite: false,
+              autoplay: false,
+              vertical: true, // Adiciona o carrossel na vertical
+              verticalSwiping: false // Permite navegar na vertical arrastando o carrossel
             }
           }
         ]}
       >
         {rssItems.map((news, index) => (
-          <React.Fragment key={index}>
           <Col key={index}>
             <Link to={`/news/${index}`} state={news} className="text-decoration-none">
-            <Card className="mt-2 mb-5 card-hover card-news">
-              <Card.Img variant="top" src={news.coverImage} style={{ height: "200px", objectFit: "cover" }} />
-              <Card.Body>
-                <Card.Title className="text-decoration-none text-dark">{news.title}</Card.Title>
-              </Card.Body>
-            </Card>
+              <Card className="mt-2 mb-5 card-hover card-news">
+                <Card.Img variant="top" src={news.coverImage} style={{ height: "200px", objectFit: "cover" }} />
+                <Card.Body>
+                  <Card.Title className="text-decoration-none text-dark">{news.title}</Card.Title>
+                </Card.Body>
+              </Card>
             </Link>
           </Col>
-          </React.Fragment>
         ))}
       </Slider>
+
 
 
 
