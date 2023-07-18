@@ -98,7 +98,7 @@ await axios.post('https://sa-east-1.aws.data.mongodb-api.com/app/data-oxpgb/endp
 
 
 // var data = JSON.stringify({
-//     "collection": "list",
+//     "collection": "t",
 //     "database": "cotacao",
 //     "dataSource": "sa-east-1-cluster",
 //     "filter": {
