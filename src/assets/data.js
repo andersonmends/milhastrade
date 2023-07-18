@@ -51,7 +51,7 @@ await axios.post('https://sa-east-1.aws.realm.mongodb.com/api/client/v2.0/auth/s
 
 
 await axios.post('https://sa-east-1.aws.data.mongodb-api.com/app/data-oxpgb/endpoint/data/v1/action/find', {
-    "collection": "list",
+    "collection": "t",
     "database": "cotacao",
     "dataSource": "sa-east-1-cluster",
     "filter": {
