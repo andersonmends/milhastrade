@@ -49,9 +49,9 @@ await axios.post('https://sa-east-1.aws.realm.mongodb.com/api/client/v2.0/auth/s
 //        console.error(error);
     });
 
-
+// Select Cotação HM
 await axios.post('https://sa-east-1.aws.data.mongodb-api.com/app/data-oxpgb/endpoint/data/v1/action/find', {
-    "collection": "t",
+    "collection": "list",
     "database": "cotacao",
     "dataSource": "sa-east-1-cluster",
     "filter": {
@@ -73,6 +73,7 @@ await axios.post('https://sa-east-1.aws.data.mongodb-api.com/app/data-oxpgb/endp
         console.log(error);
     });
 
+// Select Cotação Max
 await axios.post('https://sa-east-1.aws.data.mongodb-api.com/app/data-oxpgb/endpoint/data/v1/action/find', {
     "collection": "list",
     "database": "cotacao",
