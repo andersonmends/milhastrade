@@ -15,10 +15,12 @@ let maxData="";
 
 let authToken = ""
 const authTokenRefresh = process.env.REACT_APP_AUTH_TOKEN_REFRESH
+const realmAppId = process.env.REACT_APP_REALM_APP_ID
 
-//console.log(process.env.REACT_APP_AUTH_TOKEN_REFRESH);
 
-// await axios.post('https://sa-east-1.aws.realm.mongodb.com/api/client/v2.0/app/data-oxpgb/auth/providers/anon-user/login', {}, {
+// console.log(process.env.REACT_APP_AUTH_TOKEN_REFRESH);
+
+// await axios.post(`https://sa-east-1.aws.realm.mongodb.com/api/client/v2.0/app/${realmAppId}/auth/providers/anon-user/login`, {}, {
     
 // })
 //     .then(response => {
@@ -50,8 +52,8 @@ await axios.post('https://sa-east-1.aws.realm.mongodb.com/api/client/v2.0/auth/s
     });
 
 
-await axios.post('https://sa-east-1.aws.data.mongodb-api.com/app/data-oxpgb/endpoint/data/v1/action/find', {
-    "collection": "list",
+await axios.post(`https://sa-east-1.aws.data.mongodb-api.com/app/${realmAppId}/endpoint/data/v1/action/find`, {
+    "collection": "t", //mudei os dados depois de um tempo para pegar atualizado, mas pelo jeito bugou tudo, então acaba sendo melhor usar a base de backup "t" até pq HM deu merda
     "database": "cotacao",
     "dataSource": "sa-east-1-cluster",
     "filter": {
@@ -73,8 +75,8 @@ await axios.post('https://sa-east-1.aws.data.mongodb-api.com/app/data-oxpgb/endp
         console.log(error);
     });
 
-await axios.post('https://sa-east-1.aws.data.mongodb-api.com/app/data-oxpgb/endpoint/data/v1/action/find', {
-    "collection": "list",
+await axios.post(`https://sa-east-1.aws.data.mongodb-api.com/app/${realmAppId}/endpoint/data/v1/action/find`, {
+    "collection": "t",
     "database": "cotacao",
     "dataSource": "sa-east-1-cluster",
     "filter": {
