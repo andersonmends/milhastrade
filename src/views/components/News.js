@@ -23,7 +23,8 @@ async function fetchRSSFeed() {
   // se der ruim com heroku proxy cors, tem formas de criar um proxy para fazer requisição ou pode ser que no 
   // vercel funcione normal.
 
-  const feed = await parser.parseURL('https://cors-anywhere.herokuapp.com/https://pontospravoar.com/feed/');
+  // const feed = await parser.parseURL('https://cors-anywhere.herokuapp.com/https://pontospravoar.com/feed/');
+  const feed = await parser.parseURL('https://pontospravoar.com/feed/');
   // console.log(feed);
   return feed.items.map(item => ({
     ...item,
@@ -34,7 +35,8 @@ async function fetchRSSFeed() {
 
 async function extractCoverImageFromLink(link) {
   try {
-    const response = await axios.get("https://cors-anywhere.herokuapp.com/" + link);
+    // const response = await axios.get("https://cors-anywhere.herokuapp.com/" + link);
+    const response = await axios.get(link);
     const html = response.data;
     const $ = cheerio.load(html);
     const metaImage = $('meta[property="og:image"]').attr('content');
