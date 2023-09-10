@@ -52,8 +52,12 @@ await axios.post('https://sa-east-1.aws.realm.mongodb.com/api/client/v2.0/auth/s
     });
 
 
+
 await axios.post(`https://sa-east-1.aws.data.mongodb-api.com/app/${realmAppId}/endpoint/data/v1/action/find`, {
     "collection": "t", //mudei os dados depois de um tempo para pegar atualizado, mas pelo jeito bugou tudo, então acaba sendo melhor usar a base de backup "t" até pq HM deu merda
+
+// Select Cotação HM
+
     "database": "cotacao",
     "dataSource": "sa-east-1-cluster",
     "filter": {
@@ -75,8 +79,12 @@ await axios.post(`https://sa-east-1.aws.data.mongodb-api.com/app/${realmAppId}/e
         console.log(error);
     });
 
+
 await axios.post(`https://sa-east-1.aws.data.mongodb-api.com/app/${realmAppId}/endpoint/data/v1/action/find`, {
     "collection": "t",
+
+// Select Cotação Max
+
     "database": "cotacao",
     "dataSource": "sa-east-1-cluster",
     "filter": {
@@ -100,7 +108,7 @@ await axios.post(`https://sa-east-1.aws.data.mongodb-api.com/app/${realmAppId}/e
 
 
 // var data = JSON.stringify({
-//     "collection": "list",
+//     "collection": "t",
 //     "database": "cotacao",
 //     "dataSource": "sa-east-1-cluster",
 //     "filter": {
