@@ -17,39 +17,40 @@ let authToken = ""
 const authTokenRefresh = process.env.REACT_APP_AUTH_TOKEN_REFRESH
 const realmAppId = process.env.REACT_APP_REALM_APP_ID
 
+//aqui serve para fazer a autenticação anonima no mongodb, nesse caso será gerado um token toda vez no acesso
 
-// console.log(process.env.REACT_APP_AUTH_TOKEN_REFRESH);
-
-// await axios.post(`https://sa-east-1.aws.realm.mongodb.com/api/client/v2.0/app/${realmAppId}/auth/providers/anon-user/login`, {}, {
+await axios.post(`https://sa-east-1.aws.realm.mongodb.com/api/client/v2.0/app/${realmAppId}/auth/providers/anon-user/login`, {}, {
     
-// })
-//     .then(response => {
-//         // A resposta já está em formato JSON
-//         const data = response.data;
-//         authToken = response.data.access_token;
-//         // Aqui você pode acessar os dados retornados
-//         console.log(data);
-//     })
-//     .catch(error => {
-//         // Trate o erro, se necessário
-//         console.error(error);
-//     });
-
-await axios.post('https://sa-east-1.aws.realm.mongodb.com/api/client/v2.0/auth/session', {}, {
-    headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${authTokenRefresh}`
-    }
 })
     .then(response => {
         // A resposta já está em formato JSON
+        const data = response.data;
         authToken = response.data.access_token;
-       
+        // Aqui você pode acessar os dados retornados
+        console.log(data);
     })
     .catch(error => {
         // Trate o erro, se necessário
-//        console.error(error);
+        console.error(error);
     });
+
+// aqui ele pega um token gerado para acessar o api do mongo, o problema é que tem está atualizando o tempo do token gerado
+
+// await axios.post('https://sa-east-1.aws.realm.mongodb.com/api/client/v2.0/auth/session', {}, {
+//     headers: {
+//         'Content-Type': 'application/json',
+//         'Authorization': `Bearer ${authTokenRefresh}`
+//     }
+// })
+//     .then(response => {
+//         // A resposta já está em formato JSON
+//         authToken = response.data.access_token;
+       
+//     })
+//     .catch(error => {
+//         // Trate o erro, se necessário
+// //        console.error(error);
+//     });
 
 
 await axios.post(`https://sa-east-1.aws.data.mongodb-api.com/app/${realmAppId}/endpoint/data/v1/action/find`, {
